@@ -1,0 +1,1000 @@
+uname -a
+cat /etc/redhat-release 
+/usr/bin/lxc-create --name ussuri-node1_ceph-rgw_container-dd86f56e --config /etc/lxc/lxc-openstack.conf --template download --dir /var/lib/lxc/ussuri-node1_ceph-rgw_container-dd86f56e/rootfs --bdev dir --logfile /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log --logpriority INFO -- --dist centos --release 7 --arch amd64 --force-cache --server images.linuxcontainers.org --variant=default
+grep -ie gpg /etc/lxc/lxc-openstack.conf 
+cat /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log 
+grep -i gpg /etc/lxc/lxc-openstack.conf 
+lscpu
+clear
+cd /etc/ansible/
+cd roles/lxc_hosts/
+ls
+cd tasks/
+ls
+cd ../vars/
+ls
+clear
+ls
+grep artifacts
+grep artifacts *
+clear
+vi redhat-7.yml 
+mv ~centos/CentOS-7-20140625-x86_64-docker_01.img.tar.xz ~centos/centOS-7-191001-x86_64-docker.tar.xz
+ll ~centos/
+vi redhat-7.yml 
+cd /opt/openstack-ansible/
+clear
+cd playbooks/
+ls
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+ls
+ls /tmp/
+ls /var/lib/lxc/
+cd /opt/openstack-ansible/playbooks/logs/
+ls
+lr
+cat setup-hosts_20221019171252.log 
+htop
+cd /etc/lxc/
+ls
+clear
+ll
+more lxc-openstack.conf 
+more default.conf 
+ip a | grep 00:16:3e
+clear
+lxc-ls
+ls
+ll
+cd /opt/openstack-ansible/playbooks/
+ls
+cd /opt/openstack-ansible/playbooks/
+/usr/bin/lxc-create --name ussuri-node1_ceph-rgw_container-dd86f56e --config /etc/lxc/lxc-openstack.conf --template download --dir /var/lib/lxc/ussuri-node1_ceph-rgw_container-dd86f56e/rootfs --bdev dir --logfile /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log --logpriority INFO -- --dist centos --release 7 --arch amd64 --force-cache --server images.linuxcontainers.org --variant=default
+cat /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log 
+ping pool.sks-keyservers.net
+getenforce 
+iptables -L
+tracepath pool.sks-keyservers.net
+clear
+cat /etc/resolv.conf
+host pool.sks-keyservers.net
+yum whatprovides host
+yum -y install host
+host pool.sks-keyservers.net
+yum -y install bind-utils
+find / -type f -exec grep -ie "*keyservers*" {} \;
+clear
+cd /etc/ansible/
+find . -type f -exec grep -ie "*keyservers*" {} \;
+cd /opt/openstack-ansible/
+find . -type f -exec grep -ie "*keyservers*" {} \;
+history
+cat /etc/lxc/lxc-openstack.conf 
+htop
+clear
+lxc-create --help
+/usr/bin/lxc-create --name ussuri-node1_ceph-rgw_container-dd86f56e --config /etc/lxc/lxc-openstack.conf --template download --dir /var/lib/lxc/ussuri-node1_ceph-rgw_container-dd86f56e/rootfs --bdev dir --logfile /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log --logpriority ERROR -- --dist centos --release 7 --arch amd64 --force-cache --server images.linuxcontainers.org --variant=default
+cat /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log 
+cat ~/.ssh/id_rsa
+pwd
+git status
+clear
+watch lxc-ls -f
+souce ~centos/.bashrc 
+source ~centos/.bashrc 
+cd /opt/openstack-ansible/
+ls
+cd playbooks/
+htop
+clear
+ping p80.pool.sks-keyservers.net
+trace p80.pool.sks-keyservers.net
+yum -y install traceroute
+trace p80.pool.sks-keyservers.net
+traceroute p80.pool.sks-keyservers.net
+/usr/bin/lxc-create --name ussuri-node1_ceph-rgw_container-dd86f56e --config /etc/lxc/lxc-openstack.conf --template download --dir /var/lib/lxc/ussuri-node1_ceph-rgw_container-dd86f56e/rootfs --bdev dir --logfile /var/log/lxc/lxc-ussuri-node1_ceph-rgw_container-dd86f56e.log --logpriority ERROR -- --dist centos --release 7 --arch amd64 --force-cache --server images.linuxcontainers.org --variant=default --no-validate
+lxc-ls
+clear
+htop
+clear
+lxc-ls
+lxc-ls -f
+lxc-destroy -n ussuri-node1_ceph-rgw_container-dd86f56e
+lxc-ls
+clear
+cd /etc/openstack_deploy/ansible_facts/
+ls 
+rm -Rf ./*
+vi /etc/hosts
+clear
+cd /opt/openstack-ansible/playbooks/
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+ll /etc/pki/rpm-gpg/
+history | grep lxc-create
+ping pgp.mit.edu
+ping pgp.mit.edu:80
+ping -p 80 pgp.mit.edu
+ping -h
+man ping
+clear
+traceroute pgp.mit.edu
+clear
+htop
+vi /etc/hosts
+ll /etc/openstack_deploy/ansible_facts/
+rm -Rf /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+ls
+clear
+lxc-ls
+for a in `lxc-ls`; do echo $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+ssh 10.0.0.13
+clear
+ll /etc/openstack_deploy/ansible_facts/
+cat /etc/hosts
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+htop
+clear
+rpm -qa | grep systemd-devel
+yum -y install systemd-devel
+systemctl daemon-reload
+htop
+clear
+lxc-ls
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+clear
+vi /etc/hosts
+cd /etc/ansible/
+ls
+ls facts.d/
+cd /etc/openstack_deploy/ansible_facts/
+ls
+rm ./*
+ls
+cd /opt/openstack-ansible/playbooks/
+ls
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+watch lxc-ls -f
+ls
+cd facts.d/
+ls
+more openstack_ansible.fact 
+clear
+watch lxc-ls -f
+yum -y install systemd-networkd systemd-resolved
+yum list systemd
+clear
+rpm -qa | grep systemd*
+pwd
+clear
+pwd
+cd roles/lxc_hosts/vars/
+pwd
+yum -y install systemd-networkd
+history
+systemctl daemon-reload
+history | grep systemd-networkd
+clear
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+lxc-ls
+cat /etc/hosts
+rm -Rf /etc/openstack_deploy/ansible_facts/*
+clear
+cd /opt/openstack-ansible/playbooks/
+cd logs/
+lr
+cat setup-hosts_20221020161502.log
+vi setup-hosts_20221020161502.log
+clear
+cd ..
+ll /etc/openstack_deploy/ansible_facts/
+cat /etc/hosts
+lxc-ls
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+lr logs
+cat logs/setup-hosts_20221021093828.log
+clear
+vi logs/setup-hosts_20221021093828.log
+clear
+ll
+htop
+find / -name lxc_cache_extra_distro_packages
+clear
+find /opt -name "*lxc_cache_extra_distro_packages*"
+find /opt -type f -exec grep -iel "*lxc_cache_extra_distro_packages*" {} \;
+clear
+htop
+clear
+ls
+more lxc-hosts-setup.yml 
+grep -R lxc_cache_extra_distro_packages
+cd ..
+grep -R lxc_cache_extra_distro_packages
+cd ..
+grep -R lxc_cache_extra_distro_packages
+cd /etc/ansible/
+grep -R lxc_cache_extra_distro_packages
+cd /opt/openstack-ansible/playbooks/logs
+clear
+lr
+vi setup-hosts_20221021093828.log
+exec bash
+cd /var/lib/machines/centos-7-amd64/
+ls
+ll
+cp ~centos/centOS-7-191001-x86_64-docker.tar .
+pwd
+ls
+cd ..
+ls
+mv centos-7-amd64/centOS-7-191001-x86_64-docker.tar .
+ll
+tar -xvf centOS-7-191001-x86_64-docker.tar .
+clear
+ll
+cd ~centos
+lr
+rm centOS-7-191001-x86_64-docker.tar 
+cd /var/lib/machines
+lr
+cd centos-7-amd64/
+clear
+ls
+ls
+ls
+ls
+watch ls
+ls
+pwd
+cd ..
+ls
+clear
+watch tree
+ping ldap02.ipa.uaap.maxar.com
+which wget
+wget ldap02.ipa.uaap.maxar.com
+more index.html 
+ls
+tree 
+rm index.html 
+clear
+htop
+tree 
+htop
+clear
+cd /opt/openstack-ansible/playbooks/
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+cd /var/lib/machines/centos-7-amd64/
+clear
+ll
+tar xzvf ~centos/centOS-7-191001-x86_64-docker.tar.xz 
+tar xzv ~centos/centOS-7-191001-x86_64-docker.tar.xz .
+ls
+tar xz -d -v ~centos/centOS-7-191001-x86_64-docker.tar.xz 
+file ~centos/centOS-7-191001-x86_64-docker.tar.xz 
+xz -d -v ~centos/centOS-7-191001-x86_64-docker.tar.xz 
+ls
+ls -al
+cd ~centos/
+ls
+lr
+ls repos/
+ls rpm-gpg/
+cd /var/lib/machines/centos-7-amd64/
+ll
+cd ..
+clear
+ls
+tar -tf ~centos/centOS-7-191001-x86_64-docker.tar 
+ls
+tar -xvf ~centos/centOS-7-191001-x86_64-docker.tar .
+ls
+clear
+cd centos-7-amd64/
+ls
+tree *
+cd etc/systemd/system
+clear
+tree
+cd /opt/openstack-ansible/playbooks/
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+ls
+os-ansible.sh containers-lxc-host.yml --list-hosts
+os-ansible.sh containers-lxc-host.yml -e lxc_image_cache_refresh=true
+pwd
+cd /etc/openstack_deploy/
+grep -R "file:///*"
+grep -R "*file:///*"
+find . -type f -exec grep -l "*file:///*"
+cd /opt/openstack-ansible/
+find . -type f -exec grep -l "*file:///*"
+cd /etc/ansible/
+find . -type f -exec grep -l "*file:///*"
+find . -type f -exec grep -l "home/centos" {} \;
+cd roles/lxc_hosts/vars/
+vi redhat-7.yml 
+clear
+cd /opt/openstack-ansible/playbooks/
+os-ansible.sh containers-lxc-host.yml -e lxc_image_cache_refresh=true
+clear
+os-ansible.sh containers-lxc-host.yml -e lxc_image_cache_refresh=true
+clear
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+vi /etc/hosts
+cd /etc/openstack_deploy/ansible_facts/
+ls
+rm ./*
+ls
+cd /opt/openstack-ansible/playbooks/
+clear
+ls
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+clear
+vi /etc/hosts
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+rm /etc/openstack_deploy/ansible_facts/ussuri-node*
+ll /etc/openstack_deploy/ansible_facts/
+clear
+cat /etc/hosts
+lxc-ls
+ls /etc/openstack_deploy/ansible_facts/
+os-ansible.sh setup-hosts.yml --forks 1 -vv
+cd /opt/openstack-ansible/playbooks/logs/
+clear
+lr
+cat setup-hosts_20221021151821.log | grep aria
+qclear
+cat setup-hosts_20221021151821.log | grep aria2
+cat setup-hosts_20221021151821.log 
+vi setup-hosts_20221021151821.log 
+clear
+cd ..
+os-ansible.sh containers-lxc-host.yml -e lxc_image_cache_refresh=true
+cd /opt/openstack-ansible/playbooks/
+ls
+os-ansible.sh setup-hosts.yml
+cd /opt/openstack-ansible/playbooks/
+clear
+rm /etc/openstack_deploy/ansible_facts/*
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+cat /etc/hosts
+ll /etc/openstack_deploy/ansible_facts/
+clear
+lxc-ls
+os-ansible.sh setup-hosts.yml
+cd /opt/openstack-ansible/playbooks/
+clear
+cat setup-everything.yml 
+os-ansible.sh setup-infrastructure.yml 
+lxc-attach -n ussuri-node1_galera_container-c0eb4aca
+pwd
+clear
+watch lxc-ls -f
+clear
+cd /etc/systemd/system
+clear
+ls
+tree *
+yum -y install tree
+clear
+tree
+tree | grep systemd
+pwd
+cd /var/lib/machines
+ls
+cd centos-7-amd64/
+ls
+clear
+ls -al
+cd
+watch lxc-ls -f
+clear
+pwd
+cd /etc/openstack_deploy/
+grep galera_cluster_name 
+grep galera_cluster_name .
+grep galera_cluster_name *
+grep -R galera_cluster_name *
+clear
+cd /opt/openstack-ansible/playbooks/
+clear
+os-ansible.sh setup-infrastructure.yml -l ussuri-node1_galera_container-c0eb4aca --list-hosts
+os-ansible.sh setup-infrastructure.yml -l ussuri-node1_galera_container-c0eb4aca
+os-ansible.sh setup-infrastructure.yml -l ussuri-node1_galera_container-c0eb4aca -e galera_ignore_cluster_state=true
+lxc-attach -n ussuri-node1_galera_container-c0eb4aca
+vi /usr/bin/osa-exec
+chmod +x /usr/bin/osa-exec 
+clear
+clear
+lr
+clear
+os-ansible.sh setup-infrastructure.yml
+os-ansible.sh setup-infrastructure.yml -e galera_ignore_cluster_state=true
+lxc-ls -f
+clear
+cd /etc/yum.repos.
+cd /etc/yum.repos.d
+ls
+clear
+ll
+grep maria *
+osa-exec galera
+clear
+pwd
+cd /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/yum.repos.d/
+ll
+scp ./* ussuri2-node:/var/lib/lxc/ussuri-node2_galera_container-278d3aaa/rootfs/etc/yum.repos.d/
+more /etc/hosts
+scp ./* 10.0.0.12:/var/lib/lxc/ussuri-node2_galera_container-278d3aaa/rootfs/etc/yum.repos.d/
+scp ./* 10.0.0.13:/var/lib/lxc/ussuri-node2_galera_container-278d3aaa/rootfs/etc/yum.repos.d/
+scp ./* 10.0.0.13:/var/lib/lxc/ussuri-node3-galera-container-aec210eb/rootfs/etc/yum.repos.d/
+scp ./* 10.0.0.13:/var/lib/lxc/ussuri-node3_galera_container-aec210eb/rootfs/etc/yum.repos.d/
+clear
+clear
+pwd
+cd /opt/openstack-ansible/playbooks/
+celar
+clear
+ll
+clear
+os-ansible.sh setup-infrastructure.yml
+osa-exec galera
+pwd
+source ~centos/.bashrc 
+pwd
+clear
+find / -name mysql.conf
+find / -name cluster.cnf
+cat /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/conf.d/cluster.cnf
+clear
+cat /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/conf.d/cluster.cnf
+which mysql
+osa-exec galera
+source  ~centos/.bashrc 
+cd /opt/openstack-ansible/playbooks/
+htop
+cd /etc/ansible/
+grep -R wsrep_cluster_name
+cd /etc/openstack_deploy/
+grep -R wsrep_cluster_name
+cd /opt/openstack-ansible/
+grep -R wsrep_cluster_name
+clear
+cd /etc/ansible/
+grep -R wsrep_cluster_name
+cd /opt/
+cd /openstack/
+ls
+grep -R wsrep_cluster_name
+cd /etc/openstack_deploy/
+grep -R wsrep_cluster_name
+grep -R _cluster_name
+cd /opt/openstack-ansible/playbooks/
+clear
+os-ansible.sh setup-infrastructure.yml
+clear
+pwd
+gs
+clear
+cd roles/galera_server/
+gs
+clear
+gs
+gc -am "Hardcoding the wsrep_cluster_name to openstack_galera_cluster."
+gs
+clear
+watch lxc-ls -f
+source  ~centos/.bashrc 
+htop
+cd /opt/openstack-ansible/
+grep -R cluster
+souce ~centos/.bashrc 
+source ~centos/.bashrc 
+find / -name cluster.cnf
+cat /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/conf.d/cluster.cnf
+clear
+htop
+cat /etc/my.cnf
+hto
+htop
+clear
+htop
+clear
+cat /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/conf.d/cluster.cnf
+cat /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/conf.d/
+cd /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql/
+clear
+ll
+ll conf.d/
+cat debian.cnf 
+cd ..
+scp -r /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql 10.0.0.12:/var/lib/lxc/ussuri-node2_galera_container-278d3aaa/rootfs/etc/
+scp -r /var/lib/lxc/ussuri-node1_galera_container-c0eb4aca/rootfs/etc/mysql 10.0.0.13:/var/lib/lxc/ussuri-node3_galera_container-aec210eb/rootfs/etc/
+cd
+cd /opt/openstack-ansible/playbooks/
+clear
+os-ansible.sh setup-infrastructure.yml
+clear
+grep galera /etc/hosts
+os-ansible.sh setup-infrastructure.yml
+osa-exec galera
+clear
+find / -type f -exec grep -l "galera_cluster_name" {} \;
+find / -type f -exec grep -l "galera_cluster_name" {} \; >> /tmp/galera_cluster_name.txt
+clear
+cd /
+ls
+for a in `ls | grep -v proc`; do find $a -type f -exec grep -l galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt ; done
+clear
+for a in `ls | grep -v sys proc`; do find $a -type f -exec grep -l galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt ; done
+for a in `ls | grep -v sys | grep -v proc`; do find $a -type f -exec grep -l galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt ; done
+for a in `ls | grep etc | grep opt | grep var`; do find $a -type f -exec grep -l galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt ; done
+for a in `ls | grep '{etc\|opt\|var}'
+do
+echo $a
+done
+for a in `ls | grep '{etc\|opt\|var}'`; do echo $a; done
+for a in `ls | grep {etc\
+cd
+cd /
+for a in `ls | grep {etc\|opt\|var}
+do
+for a in `ls | grep {etc\|opt\|var}`; do echo $a; done
+for a in `ls | grep '{etc\|opt\|var}'`; do echo $a; done
+ls
+for a in `ls | egrep '{ etc \| opt \| var }'`; do echo $a; done
+for a in `ls | egrep { etc \| opt \| var }`; do echo $a; done
+for a in `ls | egrep "etc \| opt \| var"`; do echo $a; done
+for a in `ls | grep "etc \| opt \| var"`; do echo $a; done
+for a in `ls | grep {etc \| opt \| var}`; do echo $a; done
+for a in `ls | grep '{etc\|opt\|var}'`; do echo $a; done
+for a in `ls | grep 'etc\|opt\|var'`; do echo $a; done
+for a in `ls | grep 'etc\|opt\|var'`; do find $a -type f -exec grep galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt; done
+clear
+for a in `ls | grep 'etc\|o^C\|var'`; do echo "************************************" >> /tmp/galera_cluster_name.txt; find $a -type f -exec grep -l galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt; find $a -type f -exec grep galera_cluster_name {} \; >> /tmp/galera_cluster_name.txt; done
+clear
+tail -f /tmp/galera_cluster_name.txt 
+cat /tmp/galera_cluster_name.txt 
+tail -f /tmp/galera_cluster_name.txt 
+rm /tmp/galera_cluster_name.txt 
+tail -f /tmp/galera_cluster_name.txt 
+rm /tmp/galera_cluster_name.txt 
+tail -f /tmp/galera_cluster_name.txt 
+clear
+rm /tmp/galera_cluster_name.txt 
+tail -f /tmp/galera_cluster_name.txt 
+clear
+cd
+source ~centos/.bashrc 
+osa-exec galera
+clear
+source ~centos/.bashrc 
+osa-exec galera
+watch lxc-ls -f
+osa-exec galera
+clear
+watch lxc-ls -f
+cd /etc/openstack_deploy/
+clear
+ls
+vi user_variables.yml 
+clear
+ss
+ss | grep 9283
+ip a | grep 0.30
+systemctl status keepalived
+clear
+htop
+osa-exec galera
+osa-exec galera
+cd /opt/openstack-ansible/playbooks/
+more setup-infrastructure.yml 
+os-ansible.sh setup-infrastructure.yml
+os-ansible.sh setup-infrastructure.yml -e galera_ignore_cluster_state=true
+clear
+osa-exec galera
+htop
+os-ansible.sh setup-infrastructure.yml -e galera_force_bootstrap=true
+os-ansible.sh setup-infrastructure.yml -e galera_force_bootstrap=true -e galera_ignore_cluster_state=true
+clear
+lxc-ls
+lxc-stop -n ussuri-node1_galera_container-c0eb4aca
+lxc-destroy -n ussuri-node1_galera_container-c0eb4aca
+os-ansible.sh setup-hosts.yml --limit ussuri-node1_galera_container-c0eb4aca,ussuri-node2_galera_container-278d3aaa,ussuri-node3_galera_container-aec210eb --list-hosts
+os-ansible.sh setup-hosts.yml --limit ussuri-node1_galera_container-c0eb4aca,ussuri-node2_galera_container-278d3aaa,ussuri-node3_galera_container-aec210eb
+cd /etc/yum.repos.
+cd /etc/yum.repos.d/
+celar
+clear
+ll
+cd /opt/openstack-ansible/
+ls
+scripts/bootstrap-ansible.sh 
+clear
+ls
+lxc-stop -n ussuri-node1_galera_container-c0eb4aca
+lxc-destroy -n ussuri-node1_galera_container-c0eb4aca
+lxc-ls
+clear
+cd playbooks/
+os-ansible.sh setup-hosts.yml --limit ussuri-node1_galera_container-c0eb4aca,ussuri-node2_galera_container-278d3aaa,ussuri-node3_galera_container-aec210eb
+os-ansible.sh setup-infrastructure.yml 
+os-ansible.sh setup-infrastructure.yml 
+clear
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+cat /etc/hosts
+lxc-ls
+rm /etc/
+rm /etc/openstack_deploy/ansible_facts/*
+clear
+ll /etc/openstack_deploy/ansible_facts/
+cat /etc/hosts
+lxc-ls
+os-ansible.sh setup-hosts.yml 
+clear
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+vi /etc/hosts
+cat /etc/hosts
+lxc-ls
+ll /etc/openstack_deploy/ansible_facts/
+rm /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+clear
+lxc-ls
+cat /etc/hosts
+ls
+os-ansible.sh setup-hosts.yml 
+clear
+cat /etc/hosts
+vi /etc/hosts
+lxc-ls
+ll /etc/openstack_deploy/ansible_facts/
+rm /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+clear
+os-ansible.sh setup-hosts.yml 
+clear
+vi /etc/hosts
+lxc-ls
+ll /etc/openstack_deploy/ansible_facts/
+rm /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+os-ansible.sh setup-hosts.yml 
+source ~centos/.bashrc 
+cd /etc/yum.repos.d/
+ls
+grep download.fedoraproject.org/pub/epel *
+grep download.fedoraproject.org/pub/epel *
+grep rackspace *
+clear
+cd
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+lxc-ls
+cat /etc/hosts
+ll /etc/openstack_deploy/ansible_facts/
+rm /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+clear
+cd /opt/openstack-ansible/playbooks/
+cat /etc/hosts
+os-ansible.sh setup-hosts.yml 
+htop
+cd /var/lib/machines
+ls
+cd cent
+cd centos-7-amd64/
+ls
+cd etc/yum.repos.d/
+ls
+grep fedoraproj *
+pwd
+grep fedoraproj * | grep -v "#"
+clear
+grep fedoraproj * | grep -v "#"
+ls
+cd ..
+ls
+pwd
+ls
+cd ..
+ls
+find . -name galera
+find . -name "*galera*"
+clear
+cd /opt/openstack-ansible/
+ls
+cd playbooks/
+ls
+ls logs/
+cat lxc-hosts-setup.yml 
+cat containers-lxc-host.yml 
+clear
+cat containers-lxc-host.yml 
+cat containers-lxc-host.yml  | grep -ie cache
+cat lxc-hosts-setup.yml | grep -ie cache
+ll logs/
+osa-exec containers-lxc-host.yml 
+clear
+ls
+os-ansible.sh containers-lxc-host.yml 
+os-ansible.sh containers-lxc-host.yml 
+reboot
+clear
+cd /opt/openstack-ansible/
+ls
+cd playbooks/
+ls
+ls logs/
+cat lxc-hosts-setup.yml 
+cat containers-lxc-host.yml 
+clear
+cat containers-lxc-host.yml 
+cat containers-lxc-host.yml  | grep -ie cache
+cat lxc-hosts-setup.yml | grep -ie cache
+ll logs/
+osa-exec containers-lxc-host.yml 
+clear
+ls
+os-ansible.sh containers-lxc-host.yml 
+os-ansible.sh containers-lxc-host.yml 
+reboot
+clear
+cd /opt/openstack-ansible/
+ls
+cd playbooks/
+ls
+ls logs/
+cat lxc-hosts-setup.yml 
+cat containers-lxc-host.yml 
+clear
+cat containers-lxc-host.yml 
+cat containers-lxc-host.yml  | grep -ie cache
+cat lxc-hosts-setup.yml | grep -ie cache
+ll logs/
+osa-exec containers-lxc-host.yml 
+clear
+ls
+os-ansible.sh containers-lxc-host.yml 
+os-ansible.sh containers-lxc-host.yml 
+reboot
+watch lxc-ls -f
+clear
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+watch lxc-ls -f
+clear
+cd /var/lib/machines
+ls
+tree
+watch tree
+watch tree
+watch tree
+ls
+cd cent
+cd centos-7-amd64/
+ls
+cd etc/systemd/
+clear
+tree
+cd system
+clear
+watch tree
+clear
+cd /var/lib/machines
+watch tree centos-7-amd64/etc/systemd/system
+watch tree centos-7-amd64/etc/systemd/system
+watch tree centos-7-amd64/etc/systemd/system
+watch tree centos-7-amd64/etc/systemd/system
+osa-exec galera
+clear
+cd /etc/yum.repos.
+cd /etc/yum.repos.d/
+ls
+ll
+clear
+cd /opt/ansible-runtime
+cd /etc/ansible/
+ls
+cd roles/
+ls
+cd galera_server/
+ls
+find . -name repo
+find . -name repos
+find . -type f -exec grep -ie repos {} \;
+htop
+osa-exec galera
+celar
+clear
+cat /etc/hosts | grep node1 | grep galera
+cat /etc/hosts | grep galera
+htop
+df -h
+clear
+du -sh / | sort -n | tail -30
+df -h
+du -sk / | sort -n | tail -30
+du -k / | sort -n | tail -30
+cd /usr/
+ls
+du -k . | sort -n | tail -30
+cd /var/log
+du -k . | sort -n | tail -30
+cd journal/
+ls
+clear
+rm -Rf ./*
+df -h
+watch df -h
+osa-exec galera
+df -h
+watch df -h
+watch df -h
+watch df -h
+pwd
+clear
+pwd
+ls
+df -h
+cd /var/lib/
+ls
+history | grep tree
+cd machines
+ls
+watch tree centos-7-amd64/etc/systemd/system
+ls
+clear
+ll
+mv centos-7-amd64 centos-7-amd64.orig
+ll
+watch tree centos-7-amd64/etc/systemd/system
+ls
+cd centos-7-amd64
+ls
+cd etc/yum.repos.d/
+ls
+grep fedoraproj *
+more epel.repo
+clear
+ll
+more epel-lxc_hosts.repo 
+ls
+clear
+pwd
+cd /var/lib/machines
+ll
+lr
+rm -Rf centos-7-amd64/
+clear
+ls
+ll
+cd centos-7-amd64
+ll
+cd ..
+clear
+ls -al
+rmdir centos-7-amd64
+id
+ls -al
+id
+rm -Rf ./centos-7-amd64
+mv centos-7-amd64 >> /dev/null
+mv centos-7-amd64 /dev/null 
+ll
+watch tree centos-7-amd64/etc/systemd/system
+watch tree centos-7-amd64/etc/systemd/system
+lxc-ls
+lxc-ls -f
+watch lxc-ls -f
+systemctl restart sshd
+clear
+vi /etc/hosts
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+vi /etc/hosts
+ll /etc/openstack_deploy/ansible_facts/
+rm /etc/openstack_deploy/ansible_facts/*
+ll /etc/openstack_deploy/ansible_facts/
+clear
+cat /etc/hosts
+lxc-ls
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+lxc-ls
+clear
+df -h
+cat /etc/hosts
+ll /etc/openstack_deploy/ansible_facts/
+clear
+cd /opt/openstack-ansible/playbooks/
+clear
+ll
+clear
+ls
+os-ansible.sh lxc-hosts-setup.yml 
+os-ansible.sh containers-lxc-host.yml 
+clear
+ls
+cd ..
+scripts/bootstrap-ansible.sh 
+clear
+cd playbooks/
+os-ansible.sh setup-hosts.yml 
+source ~centos/.bashrc 
+cd /etc/ansible/
+grep R ldap02
+grep -R ldap02
+grep -R 'ldap02\|artifacts'
+source ~centos/.bashrc 
+cat /etc/hosts
+clear
+lxc-ls
+cd /opt/openstack-ansible/playbooks/
+os-ansible.sh setup-hosts.yml 
+clear
+ls
+openstack-ansible containers-lxc-host.yml 
+openstack-ansible lxc-hosts-setup.yml 
+clear
+openstack-ansible containers-lxc-host.yml 
+os-ansible.sh setup-hosts.yml 
+lsblk 
+clear
+pvs
+pvscan 
+pvck
+pvck /dev/sda2
+pvs
+lsblk 
+systemctl restart sshd
+ls
+pwd
+ls -al
+clear
+ll
+mkdir git
+cd git/
+ls
+git clonse https://github.com/usridzero/osalab.git
+git clone https://github.com/usridzero/osalab.git
+ls
+cd osalab/
+ls
+cp /etc/sysconfig/network-scripts/* .
+ll
+ls
+clear
+ls
+mkdir network-scripts
+ls
+mv ./* ./network-scripts/
+ls
+clear
+ll network-scripts/
+cp ~root/.bash_history root_bash_history.txt
+ls
+gs
+ga .
+gc -am "first commit."
+clear
+ls
+gs
+git push
+git config --global push.default simple
+push
+git remote -vv
+pwd
+cd
+cd ~centos
+exit
