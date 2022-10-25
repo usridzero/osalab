@@ -1,0 +1,167 @@
+---
+cidr_networks: &cidr_networks
+  container: 192.168.0.0/24
+  tunnel: 192.168.1.0/24
+  storage: 192.168.2.0/24
+#container=br-mgmt,tunnel=br-vxlan,storage=br-storage
+used_ips:
+  - 192.168.0.1,192.168.0.29
+  - 192.168.1.1,192.168.1.29
+  - 192.168.2.1,192.168.2.29
+
+global_overrides:
+  cidr_networks: *cidr_networks
+  internal_lb_vip_address: 192.168.0.30
+  #
+  # The below domain name must resolve to an IP address
+  # in the CIDR specified in haproxy_keepalived_external_vip_cidr.
+  # If using different protocols (https/http) for the public/internal
+  # endpoints the two addresses must be different.
+  #
+  external_lb_vip_address: 10.0.0.30
+  management_bridge: "br-mgmt"
+  provider_networks:
+    - network:
+        container_bridge: "br-mgmt"
+        container_type: "veth"
+        container_interface: "eth1"
+        container_mtu: "9000"
+        ip_from_q: "container"
+        type: "raw"
+        group_binds:
+          - all_containers
+          - hosts
+        is_container_address: true
+    - network:
+        container_bridge: "br-vxlan"
+        container_type: "veth"
+        container_interface: "eth10"
+        container_mtu: "9000"
+        ip_from_q: "tunnel"
+        type: "vxlan"
+        range: "1:1000"
+        net_name: "vxlan"
+        group_binds:
+          - neutron_linuxbridge_agent
+    - network:
+        container_bridge: "br-ext"
+        container_type: "veth"
+        container_mtu: "1500"
+        container_interface: "eth11"
+        type: "flat"
+        net_name: "ext1"
+        group_binds:
+          - neutron_linuxbridge_agente
+    - network:
+        container_bridge: "br-storage"
+        container_type: "veth"
+        container_interface: "eth2"
+        container_mtu: "9000"
+        ip_from_q: "storage"
+        type: "raw"
+        group_binds:
+          - glance_api
+          - cinder_api
+          - cinder_volume
+          - nova_compute
+          - ceph-osd
+
+###
+### Infrastructure
+###
+
+infrastructure_hosts: &infrastructure_hosts
+  ussuri-node1:
+    ip: 192.168.0.11
+  ussuri-node2:
+    ip: 192.168.0.12
+  ussuri-node3:
+    ip: 192.168.0.13
+
+# nova hypervisors
+compute_hosts: &compute_hosts
+  ussuri-node1:
+    ip: 192.168.0.11
+  ussuri-node2:
+    ip: 192.168.0.12
+  ussuri-node3:
+    ip: 192.168.0.13
+
+placement-infra_hosts: *infrastructure_hosts 
+
+ceph-osd_hosts: *compute_hosts
+
+# galera, memcache, rabbitmq, utility
+shared-infra_hosts: *infrastructure_hosts
+
+# ceph-mon, ceph-rgw, ceph-mds containers
+ceph-mon_hosts: *infrastructure_hosts
+ceph-rgw_hosts: *infrastructure_hosts
+ceph-mds_hosts: *infrastructure_hosts
+ceph-nfs_hosts: *infrastructure_hosts
+
+# repository (apt cache, python packages, etc)
+repo-infra_hosts: *infrastructure_hosts
+
+# load balancer
+# Ideally the load balancer should not use the Infrastructure hosts.
+# Dedicated hardware is best for improved performance and security.
+haproxy_hosts: *infrastructure_hosts
+
+# rsyslog server
+log_hosts: *infrastructure_hosts
+
+###
+### OpenStack
+###
+
+# keystone
+identity_hosts: *infrastructure_hosts
+
+# cinder api services
+storage-infra_hosts: *infrastructure_hosts
+
+# cinder volume hosts (Ceph RBD-backed)
+storage_hosts: *infrastructure_hosts
+
+# glance
+image_hosts: *infrastructure_hosts
+
+# nova api, conductor, etc services
+compute-infra_hosts: *infrastructure_hosts
+
+# horizon
+dashboard_hosts: *infrastructure_hosts
+
+# neutron server, agents (L3, etc)
+network_hosts: *infrastructure_hosts
+
+# manila - data hosts same as infra
+# manila-infra_hosts: *infrastructure_hosts
+# manila-data_hosts: *infrastructure_hosts
+
+# zun
+zun-infra_hosts: *infrastructure_hosts
+
+zun-compute_hosts:
+  ussuri-node1:
+    ip: 192.168.0.11
+  ussuri-node2:
+    ip: 192.168.0.12
+  ussuri-node3:
+    ip: 192.168.0.13
+
+# heat
+#orchestration_hosts: *infrastructure_hosts
+
+# ceilometer (telemetry data collection)
+#metering-infra_hosts: *infrastructure_hosts
+
+# aodh (telemetry alarm service)
+#metering-alarm_hosts: *infrastructure_hosts
+
+# gnocchi (telemetry metrics storage)
+#metrics_hosts: *infrastructure_hosts
+
+# ceilometer compute agent (telemetry data collection)
+#metering-compute_hosts: *compute_hosts

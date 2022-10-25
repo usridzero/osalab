@@ -1,0 +1,195 @@
+# This file is managed by openstack-ansible. No manual edits.
+{
+    "ussuri-node1": {
+        "ansible_host": "192.168.0.11",
+        "container_address": "192.168.0.11"
+    },
+    "ussuri-node1_ceph-mon_container-c835064e": {
+        "ansible_host": "192.168.0.112",
+        "container_address": "192.168.0.112"
+    },
+    "ussuri-node1_ceph-rgw_container-dd86f56e": {
+        "ansible_host": "192.168.0.118",
+        "container_address": "192.168.0.118"
+    },
+    "ussuri-node1_cinder_api_container-956b7a76": {
+        "ansible_host": "192.168.0.70",
+        "container_address": "192.168.0.70"
+    },
+    "ussuri-node1_galera_container-c0eb4aca": {
+        "ansible_host": "192.168.0.161",
+        "container_address": "192.168.0.161"
+    },
+    "ussuri-node1_glance_container-87bf2e4e": {
+        "ansible_host": "192.168.0.88",
+        "container_address": "192.168.0.88"
+    },
+    "ussuri-node1_horizon_container-d60383bd": {
+        "ansible_host": "192.168.0.85",
+        "container_address": "192.168.0.85"
+    },
+    "ussuri-node1_keystone_container-446ec394": {
+        "ansible_host": "192.168.0.243",
+        "container_address": "192.168.0.243"
+    },
+    "ussuri-node1_memcached_container-02f681f7": {
+        "ansible_host": "192.168.0.242",
+        "container_address": "192.168.0.242"
+    },
+    "ussuri-node1_neutron_server_container-791d70ba": {
+        "ansible_host": "192.168.0.66",
+        "container_address": "192.168.0.66"
+    },
+    "ussuri-node1_nova_api_container-5a0cd4da": {
+        "ansible_host": "192.168.0.189",
+        "container_address": "192.168.0.189"
+    },
+    "ussuri-node1_placement_container-4737d29a": {
+        "ansible_host": "192.168.0.163",
+        "container_address": "192.168.0.163"
+    },
+    "ussuri-node1_rabbit_mq_container-1f504c26": {
+        "ansible_host": "192.168.0.78",
+        "container_address": "192.168.0.78"
+    },
+    "ussuri-node1_repo_container-ca9d995a": {
+        "ansible_host": "192.168.0.104",
+        "container_address": "192.168.0.104"
+    },
+    "ussuri-node1_rsyslog_container-fc0e721b": {
+        "ansible_host": "192.168.0.202",
+        "container_address": "192.168.0.202"
+    },
+    "ussuri-node1_utility_container-3f301497": {
+        "ansible_host": "192.168.0.74",
+        "container_address": "192.168.0.74"
+    },
+    "ussuri-node2": {
+        "ansible_host": "192.168.0.12",
+        "container_address": "192.168.0.12"
+    },
+    "ussuri-node2_ceph-mon_container-cbb452c2": {
+        "ansible_host": "192.168.0.67",
+        "container_address": "192.168.0.67"
+    },
+    "ussuri-node2_ceph-rgw_container-4cd24123": {
+        "ansible_host": "192.168.0.213",
+        "container_address": "192.168.0.213"
+    },
+    "ussuri-node2_cinder_api_container-49eac418": {
+        "ansible_host": "192.168.0.110",
+        "container_address": "192.168.0.110"
+    },
+    "ussuri-node2_galera_container-278d3aaa": {
+        "ansible_host": "192.168.0.65",
+        "container_address": "192.168.0.65"
+    },
+    "ussuri-node2_glance_container-2f39aa60": {
+        "ansible_host": "192.168.0.54",
+        "container_address": "192.168.0.54"
+    },
+    "ussuri-node2_horizon_container-3915d5af": {
+        "ansible_host": "192.168.0.232",
+        "container_address": "192.168.0.232"
+    },
+    "ussuri-node2_keystone_container-c776fc40": {
+        "ansible_host": "192.168.0.191",
+        "container_address": "192.168.0.191"
+    },
+    "ussuri-node2_memcached_container-f3d867ad": {
+        "ansible_host": "192.168.0.203",
+        "container_address": "192.168.0.203"
+    },
+    "ussuri-node2_neutron_server_container-6588e142": {
+        "ansible_host": "192.168.0.176",
+        "container_address": "192.168.0.176"
+    },
+    "ussuri-node2_nova_api_container-7a655410": {
+        "ansible_host": "192.168.0.75",
+        "container_address": "192.168.0.75"
+    },
+    "ussuri-node2_placement_container-40f49e7c": {
+        "ansible_host": "192.168.0.95",
+        "container_address": "192.168.0.95"
+    },
+    "ussuri-node2_rabbit_mq_container-43722561": {
+        "ansible_host": "192.168.0.34",
+        "container_address": "192.168.0.34"
+    },
+    "ussuri-node2_repo_container-5c788743": {
+        "ansible_host": "192.168.0.223",
+        "container_address": "192.168.0.223"
+    },
+    "ussuri-node2_rsyslog_container-e4fa79bf": {
+        "ansible_host": "192.168.0.111",
+        "container_address": "192.168.0.111"
+    },
+    "ussuri-node2_utility_container-807bd1b0": {
+        "ansible_host": "192.168.0.178",
+        "container_address": "192.168.0.178"
+    },
+    "ussuri-node3": {
+        "ansible_host": "192.168.0.13",
+        "container_address": "192.168.0.13"
+    },
+    "ussuri-node3_ceph-mon_container-589e4581": {
+        "ansible_host": "192.168.0.152",
+        "container_address": "192.168.0.152"
+    },
+    "ussuri-node3_ceph-rgw_container-c210e97f": {
+        "ansible_host": "192.168.0.107",
+        "container_address": "192.168.0.107"
+    },
+    "ussuri-node3_cinder_api_container-06e864c7": {
+        "ansible_host": "192.168.0.234",
+        "container_address": "192.168.0.234"
+    },
+    "ussuri-node3_galera_container-aec210eb": {
+        "ansible_host": "192.168.0.206",
+        "container_address": "192.168.0.206"
+    },
+    "ussuri-node3_glance_container-e0a30481": {
+        "ansible_host": "192.168.0.250",
+        "container_address": "192.168.0.250"
+    },
+    "ussuri-node3_horizon_container-76c6e008": {
+        "ansible_host": "192.168.0.93",
+        "container_address": "192.168.0.93"
+    },
+    "ussuri-node3_keystone_container-682d2999": {
+        "ansible_host": "192.168.0.92",
+        "container_address": "192.168.0.92"
+    },
+    "ussuri-node3_memcached_container-dfb7b9d1": {
+        "ansible_host": "192.168.0.228",
+        "container_address": "192.168.0.228"
+    },
+    "ussuri-node3_neutron_server_container-8e004b71": {
+        "ansible_host": "192.168.0.174",
+        "container_address": "192.168.0.174"
+    },
+    "ussuri-node3_nova_api_container-59b6ac95": {
+        "ansible_host": "192.168.0.156",
+        "container_address": "192.168.0.156"
+    },
+    "ussuri-node3_placement_container-fd8ad8c3": {
+        "ansible_host": "192.168.0.87",
+        "container_address": "192.168.0.87"
+    },
+    "ussuri-node3_rabbit_mq_container-7552093b": {
+        "ansible_host": "192.168.0.149",
+        "container_address": "192.168.0.149"
+    },
+    "ussuri-node3_repo_container-97c4124f": {
+        "ansible_host": "192.168.0.39",
+        "container_address": "192.168.0.39"
+    },
+    "ussuri-node3_rsyslog_container-def2565b": {
+        "ansible_host": "192.168.0.102",
+        "container_address": "192.168.0.102"
+    },
+    "ussuri-node3_utility_container-e568322d": {
+        "ansible_host": "192.168.0.71",
+        "container_address": "192.168.0.71"
+    }
+}

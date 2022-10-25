@@ -1,0 +1,242 @@
+---
+#install_method: source
+# Because we have three haproxy nodes, we need
+# to one active LB IP, and we use keepalived for that.
+## Load Balancer Configuration (haproxy/keepalived)
+haproxy_keepalived_external_vip_cidr: "10.0.0.30/24"
+haproxy_keepalived_internal_vip_cidr: "192.168.0.30/24"
+haproxy_keepalived_external_interface: br-ext
+haproxy_keepalived_internal_interface: br-mgmt
+#haproxy_user_ssl_cert: /etc/openstack_deploy/certs/wildcard.uaap.maxar.com.crt
+#haproxy_user_ssl_key: /etc/openstack_deploy/certs/wildcard.uaap.maxar.com.key
+#haproxy_user_ssl_ca_cert: /etc/openstack_deploy/certs/Maxar-CA-Chain.crt
+keepalived_external_ping_address:  10.0.0.1
+keepalived_internal_ping_address:  192.168.0.11
+
+## custom haproxy entries
+# see https://github.com/openstack/openstack-ansible-haproxy_server/blob/master/templates/service.j2
+haproxy_extra_services:
+  # proxy ceph dashboard service
+  - service:
+      haproxy_service_name: ceph_dashboard
+      haproxy_backend_nodes: "{{ groups['ceph-mon'] }}"
+      haproxy_ssl: "{{ haproxy_ssl }}"
+      haproxy_port: 9999
+      haproxy_backend_port: 8080
+      haproxy_balance_type: http
+      haproxy_backend_httpcheck_options: 
+        - "expect status 200"
+      haproxy_backend_options:
+        - "httpchk GET / HTTP/1.0\\r\\nUser-agent:\\ osa-haproxy-healthcheck"
+      backend_rise: 1
+      backend_fall: 1
+  # proxy ceph prometheus service
+  # the prometheus service always returns a 200 even for inactive mgrs
+  # so we need to healthcheck the dashboard port for the active server
+  - service:
+      haproxy_service_name: ceph_prometheus
+      haproxy_backend_nodes: "{{ groups['ceph-mon'] }}"
+      haproxy_ssl: "{{ haproxy_ssl }}"
+      haproxy_port: 9283
+      haproxy_backend_port: 9283
+      haproxy_check_port: 8080
+      haproxy_balance_type: http
+      haproxy_backend_httpcheck_options: 
+        - "expect status 200"
+      haproxy_backend_options:
+        - "httpchk GET / HTTP/1.0\\r\\nUser-agent:\\ osa-haproxy-healthcheck"
+      backend_rise: 1
+      backend_fall: 1
+  - service:
+      haproxy_service_name: galera_external
+      haproxy_backend_nodes: "{{ (groups['galera_all'] | default([]))[:1] }}"  # list expected
+      haproxy_backup_nodes: "{{ (groups['galera_all'] | default([]))[1:] }}"
+      haproxy_port: 9306
+      haproxy_backend_port: 3306
+      haproxy_check_port: 9200
+      haproxy_balance_type: tcp
+      haproxy_timeout_client: 5000s
+      haproxy_timeout_server: 5000s
+      haproxy_backend_options:
+        - "httpchk HEAD / HTTP/1.0\\r\\nUser-agent:\\ osa-haproxy-healthcheck"
+      haproxy_whitelist_networks: "{{ haproxy_galera_whitelist_networks }}"
+      haproxy_service_enabled: "{{ groups['galera_all'] is defined and groups['galera_all'] | length > 0 }}"
+
+#### CEPH Configuration ##################
+
+## Ceph cluster fsid (must be generated before first run)
+## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
+generate_fsid: false
+#fsid: 116f14c4-7fe1-40e4-94eb-9240b63de5c1 # Replace with your generated UUID
+fsid: 2aba0589-4c68-4e48-be28-1294ab8db6fb # Omar's Home Lab
+## ceph-ansible settings
+## See https://github.com/ceph/ceph-ansible/tree/master/group_vars for
+## additional configuration options availble.
+monitor_address_block: "192.168.0.0/24"
+public_network: "192.168.0.0/24"
+cluster_network: "192.168.2.0/24"
+#osd_scenario: collocated
+osd_scenario: lvm
+osd_objectstore: bluestore
+journal_size: 30720 # size in MB
+dmcrypt: true
+devices:
+  - /dev/sdb
+  - /dev/sdc
+
+# ceph-nfs
+nfs_file_gw: true
+nfs_obj_gw: true
+
+# ceph-ansible automatically creates pools & keys for OpenStack services
+openstack_config: true
+cinder_ceph_client: cinder
+glance_ceph_client: glance
+glance_default_store: rbd
+glance_rbd_store_pool: images
+# this setting installs ceph on compute nodes
+nova_libvirt_images_rbd_pool: vms
+
+### Openstack Configuration ###############
+nova_cpu_allocation_ratio: 10.0
+nova_ram_allocation_ratio: 1.0
+# account for number of OSDs per host and then any extra overhead allocated 
+nova_reserved_host_memory_mb: "{{ (devices | default([]) | length * 1024 * 4) + (nova_custom_reserved_host_memory_mb | default(0)) }}"  
+nova_resume_guests_state_on_host_boot: true
+
+ceph_conf_overrides_rgw:
+  "client.rgw.{{ hostvars[inventory_hostname]['ansible_hostname'] }}.rgw0":
+    # OpenStack integration with Keystone
+    rgw_keystone_url: "{{ keystone_service_adminuri }}"
+    rgw_keystone_api_version: 3
+    rgw_keystone_admin_user: "{{ radosgw_admin_user }}"
+    rgw_keystone_admin_password: "{{ radosgw_admin_password }}"
+    rgw_keystone_admin_tenant: "{{ radosgw_admin_tenant }}"
+    rgw_keystone_admin_domain: default
+    rgw_keystone_accepted_roles: 'member, _member_, admin, swiftoperator'
+    rgw_keystone_implicit_tenants: 'true'
+    rgw_swift_account_in_url: true
+    rgw_swift_versioning_enabled: 'true'
+    # Add S3 support, in addition to Swift
+    rgw_enable_apis: 'swift, s3, admin'
+    rgw_s3_auth_use_keystone: 'true'
+
+
+cinder_backends:
+  RBD:
+    volume_driver: cinder.volume.drivers.rbd.RBDDriver
+    rbd_pool: volumes
+    rbd_ceph_conf: /etc/ceph/ceph.conf
+    rbd_store_chunk_size: 8
+    volume_backend_name: rbddriver
+    rbd_user: "{{ cinder_ceph_client }}"
+    rbd_secret_uuid: "{{ cinder_ceph_client_uuid }}"
+    report_discard_supported: true
+
+
+
+# an example of service config file override
+# the convention is <service>_<config_file_name>_overrides
+# and will override templates/vars that generate the ini files
+nova_nova_conf_default_overrides:
+  DEFAULT:
+    block_device_allocate_retries: 600
+    block_device_allocate_retries_interval: 10
+    block_device_creation_timeout: 6000
+
+nova_nova_conf_overrides: "{{ nova_nova_conf_default_overrides | combine((nova_nova_conf_extra_overrides | default({})), recursive=True) }}"
+    
+## Horizon
+horizon_keystone_multidomain_support: True
+horizon_session_timeout: 43200
+horizon_enable_manila_ui: True
+horizon_enable_zun_ui: True
+
+zun_dashboard_git_install_branch: stable/train
+
+horizon_custom_uploads:
+  logo:
+    src: "/etc/openstack_deploy/assets/uaap_logo.svg"
+    dest: "img/logo.svg"
+  logo_splash:
+    src: "/etc/openstack_deploy/assets/uaap_splash.svg"
+    dest: "img/logo-splash.svg"
+
+## Keystone
+keystone_auth_methods: "password,token,application_credential"
+#custom_ldap_config_freeipa: &ldap_freeipa_config
+#  url: ldaps://ldap02.ipa.uaap.maxar.com
+#  user: uid=keystone-svc,cn=users,cn=accounts,dc=ipa,dc=uaap,dc=maxar,dc=com
+#  password: "LetM3In!LetM3In!"
+#  query_scope: sub
+#  chase_referrals: 0
+#  user_tree_dn: "cn=users,cn=accounts,dc=ipa,dc=uaap,dc=maxar,dc=com"
+#  user_objectclass: inetOrgPerson
+#  user_allow_create: false
+#  user_allow_update: fasle
+#  user_allow_delete: false
+#  user_id_attribute: uid
+#  user_name_attribute: uid
+#  user_mail_attribute: mail
+#  group_allow_create: false
+#  group_allow_update: false
+#  group_allow_delete: false
+#  group_tree_dn: "cn=groups,cn=accounts,dc=ipa,dc=uaap,dc=maxar,dc=com"
+#  group_objectclass: groupOfNames
+#  group_id_attribute: cn
+#  group_name_attribute: cn
+#  group_member_attribute: member
+#  group_desc_attribute: description
+#  user_enabled_attribute: nsAccountLock
+#  user_enabled_default: false
+#  user_enabled_invert: true 
+
+
+## Manila
+# manila_protocols:
+#   - NFS
+#   - CIFS
+#   - CEPHFS
+
+# manila_backends:
+
+#   cephfsnfs1:
+#     ganesha_rados_store_enable: True
+#     ganesha_rados_store_pool_name: cephfs_data
+#     driver_handles_share_servers: False
+#     #service_instance_user: manila
+#     #service_instance_password: "{{ manila_service_password }}"
+#     share_backend_name: CEPHFSNFS1
+#     share_driver: manila.share.drivers.cephfs.driver.CephFSDriver
+#     cephfs_protocol_helper_type: NFS
+#     cephfs_conf_path: /etc/ceph/ceph.conf
+#     cephfs_auth_id: manila
+#     cephfs_cluster_name: ceph
+#     cephfs_enable_snapshots: False
+#     cephfs_ganesha_server_is_remote: True
+#     cephfs_ganesha_server_ip: 172.29.224.239
+#     cephfs_ganesha_server_username: root
+#     cephfs_ganesha_path_to_private_key: /etc/manila/id_rsa
+
+# manila_default_store: cephfsnfs1
+
+zun_zun_conf_overrides:
+  DEFAULT:
+    default_image_driver: docker
+
+zun_docker_config_overrides:
+  runtimes:
+    nvidia:
+      path: nvidia-container-runtime
+      runtimeArgs: []
+
+# kuryr needs way more setup to run as a user account
+# https://bugs.launchpad.net/kuryr-libnetwork/+bug/1852105
+# https://review.opendev.org/c/openstack/kuryr/+/764908
+zun_kuryr_system_user_name: root
+zun_kuryr_system_group_name: root
+
+
+neutron_linuxbridge_agent_ini_overrides:
+  linux_bridge:
+    bridge_mappings: ext1:br-ext

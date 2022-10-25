@@ -1,0 +1,6 @@
+DEVICE=enp0s9
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+BRIDGE=br-vxlan
