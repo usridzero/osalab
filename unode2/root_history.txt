@@ -1,0 +1,445 @@
+exit
+vi /etc/sudoers
+yum -y install bridge-utils
+yum -y install epel-release
+yum -y install htop
+clear
+yum -y upgrade
+cat .bashrc 
+clear
+history
+clear
+clear
+cd
+clear
+ll
+ls -al
+mkdir .ssh
+cd .ssh
+ls -al
+chmod 700 .
+ls -al
+chmod 600 ./*
+clear
+ls -al
+cd /etc/sysconfig/network-scripts/
+lr
+cat ifcfg-enp0s3 
+cat ifcfg-br-ext 
+systemctl restart network
+cd 
+cd .ssh
+ls
+rm known_hosts 
+clear
+ssh 10.0.0.11
+ssh 10.0.0.13
+ssh 192.168.0.11
+ssh 192.168.0.13
+ssh 192.168.1.11
+ssh 192.168.2.11
+ssh 192.168.1.13
+ssh 192.168.2.13
+clear
+ssh 10.0.0.12
+ssh 192.168.0.12
+ssh 192.168.1.12
+ssh 192.168.2.12
+clear
+w
+systemctl stop firewalld
+systemctl mask firewalld
+setenforce 0
+vi /etc/selinux/config 
+getenforce 
+cd
+yum install bridge-utils iputils lsof lvm2   chrony openssh-server sudo tcpdump python -y
+clear
+history | grep yum
+echo 'bonding' >> /etc/modules-load.d/openstack-ansible.conf
+echo '8021q' >> /etc/modules-load.d/openstack-ansible.conf
+systemctl enable chronyd.service
+systemctl start chronyd.service
+clear
+brctl show
+cat /etc/hosts
+clear
+more /etc/hosts
+lxc-ls
+clear
+watch lxc-ls -f
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+chmod +x /usr/local/bin/os*
+vi /etc/bashrc 
+exit
+osa-exec galera
+osa-exec rabbit
+clear
+for a in `ip a | grep 1500 | awk -F: '{ print $2 }'`; do ip li set mtu 9000 dev $a; done
+for a in `ip a | grep 1500 | awk -F@ '{ print $1 }'`; do ip li set mtu 9000 dev $a; done
+ip a | grep 1500
+ip a | grep 9000
+clear
+osa-exec rabbit
+clear
+grep node1-rabbit
+grep node1-rabbit /etc/hosts
+osa-exec rabbit
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+osa-exec rabbit
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+for a in `lxc-ls`; do lxc-stop -n $a; lxc-destroy -n $a; done
+clear
+lxc-ls
+vi /etc/hosts
+clear
+cat /etc/hosts
+ip a
+clear
+htop
+htop
+clear
+osa-exec rabbit
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+lsblk 
+osa-exec rabbit
+osa-exec galera
+lsblk 
+watch lxc-ls -f
+htop
+clear
+osa-exec nova
+lxc-ls | grep nova
+osa-exec nova
+clear
+systemctl daemon-reload
+systemctl daemon-reload
+systemctl | grep -ie libvirt
+watch hatop -s /var/run/haproxy.stat
+hatop -s /var/run/haproxy.stat
+clear
+osa-exec cinder
+osa-exec galera
+htop
+df -h
+clear
+htop
+clear
+osa-exec neutron
+ip a | grep 0.30
+clear
+htop
+osa-exec galera
+systemctl | grep haproxy
+systemctl restart haproxy
+osa-exec galera
+lxc-stop -n ussuri-node2-galera-container-278d3aaa
+lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-ls -f
+lxc-start -n ussuri-node2_galera_container-278d3aaa
+lxc-start -n ussuri-node2_galera_container-278d3aaa
+lxc-ls -f
+osa-exec galera
+reboot
+osa-exec galera
+lxc-ls -f
+osa-exec galera
+lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-ls -f
+lxc-ls -f
+lxc-start -n ussuri-node2_galera_container-278d3aaa
+clear
+lxc-ls -f
+htop
+clear
+lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+rm -Rf /openstack/ussuri-node2_galera_container-278d3aaa/*
+cat /etc/hosts | grep galer
+watch lxc-ls -f
+ll /openstack/ussuri-node2_galera_container-278d3aaa/
+ll /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+clear
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+lxc-ls -f
+rm -Rf /openstack/ussuri-node2_galera_container-278d3aaa/*
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+rm -Rf /openstack/ussuri-node2_galera_container-278d3aaa/*
+grep galera /etc/hosts
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+yum repolist
+yum clean all
+clear
+yum repolist
+mkdir /backups/
+tar -zcvf /backups/rpmdb-$(date +"%d%m%Y").tar.gz  /var/lib/rpm
+rm -f /var/lib/rpm/__db*
+/usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages
+cd /var/lib/rpm/
+mv Packages Packages.back
+/usr/lib/rpm/rpmdb_dump Packages.back | /usr/lib/rpm/rpmdb_load Packages
+/usr/lib/rpm/rpmdb_verify Packages
+rpm -qa >/dev/null
+rpm -vv --rebuilddb
+clear
+yum clean all
+yum repolist
+cd
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+yum repolist
+clear
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+watch ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+grep galera /etc/hosts
+clear
+lxc-ls -f
+lxc-ls -f
+osa-exec galera
+clear
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+rm -Rf /openstack/ussuri-node2_galera_container-278d3aaa/*
+yum repolist
+watch lxc-ls -f
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+osa-exec galera
+for a in `ip a | grep 1500 | awk -F: '{ print $2 }'`; do ip li set mtu 9000 dev $a; done
+for a in `ip a | grep 1500 | awk -F@ '{ print $1 }'`; do ip li set mtu 9000 dev $a; done
+ip a | grep 1500
+clear
+osa-exec galera
+clear
+ls -l /openstack/ussuri-node2_galera_container-278d3aaa/
+df -h
+exit
+htop
+htop
+clear
+osa-exec galera
+htop
+lsblk 
+clear
+htop
+osa-exec galera
+htop
+osa-exec neutron
+htop
+clear
+osa-exec galera
+htop
+htop
+clear
+osa-exec galera
+htop
+osa-exec horizon
+osa-exec cinder
+osa-exec galera
+systemctl | grep -ie post
+systemctl status postfix
+systemctl status haproxy
+systemctl status haproxy
+grep galera /etc/hosts
+pin gussuri-node1-galera-container-c0eb4aca
+ping ussuri-node1-galera-container-c0eb4aca
+systemctl status haproxy
+systemctl status keepalived
+osa-exec galera
+clear
+for a in `lxc-ls`; do lxc-stop -n $a; done
+reboot
+watch lxc-ls -f
+htop
+osa-exec galera
+osa-exec galera
+clear
+systemctl status haproxy
+systemctl restart haproxy
+systemctl status haproxy
+journalctl -feu haproxy
+lxc-ls -f
+ssh 192.168.0.67
+ssh 192.168.0.213
+clear
+jour
+journalctl -feu haproxy
+cd /etc/haproxy/
+ls
+more haproxy.cfg 
+ha
+lxc-ls -f
+osa-exec ceph-rgw
+osa-exec neutron
+osa-exec galera
+clear
+ip r
+htop
+osa-exec horizon
+tracepath 192.168.0.30
+osa-exec horizon
+ip a | grep 0.30
+ip a | grep 192.168
+ip r
+ping 192.168.0.12
+ping 192.168.0.11
+tracepath 192.168.0.11
+osa-exec horizon
+ip a | grep "mtu 1500"
+for a in `ip a | grep 1500 | awk -F: '{ print $2 }'`; do ip li set mtu 9000 dev $a; done
+clear
+ip a | grep "mtu 1500"
+for a in `ip a | grep 1500 | awk -F@ '{ print $1 }'`; do ip li set mtu 9000 dev $a; done
+clear
+ip a | grep "mtu 1500"
+osa-exec horizon
+ip a | grep "mtu 1500"
+osa-exec neutron
+osa-exec horizon
+osa-exec galera
+clear
+ip a | grep mtu
+osa-exec galera
+htop
+osa-exec galera
+for a in `ip a | grep lxcbr0 | awk -F@ '{ print $1 }'`; do ip li set mtu 1500 dev $a; done
+ip a | grep mtu
+ip li set mtu 1500 br-ext
+clear
+osa-exec galera
+ip li set mtu 9000 enp0s8
+ip li set mtu 9000 enp0s9
+ip li set mtu 9000 enp0s10
+clear
+ip a | grep mtu | grep 1500
+ip a | grep mtu | grep 9000
+clear
+osa-exec galera
+htop
+systemctl daemon-reload
+systemctl is-enabled keepalived
+clear
+htop
+systemctl daemon-reload && systemctl is-enabled keepalived
+htop
+htop
+htop
+htop
+clear
+ps -ef | grep msql
+ps -ef | grep maria
+systemctl | grep mysql
+systemctl | grep -ie mysql
+systemctl | grep -ie maria
+ss
+ss | grep -ie sql
+ss | grep -ie maria
+cd /var/lib/lxc/
+clear
+ls
+for a in `ls ./*/rootfs/etc/bashrc`; do echo "set -o vi" >> $a; done
+htop
+ss | grep 45
+ss | grep 4568
+ss | grep 456
+clear
+cd
+osa-exec galera
+lxc-stop -n ussuri-node2-galera-container-278d3aaa
+lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-ls -f
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+htop
+watch lxc-ls -f
+clear
+ip a | grep mtu | grep 1500
+ip a | grep mtu | grep 9000
+clear
+lcear
+clear
+cd /etc/sysconfig/network-scripts/
+clear
+lr
+vi ifcfg-br-storage 
+lr
+vi ifcfg-br-mgmt 
+lr
+vi ifcfg-br-vxlan 
+clear
+ip a | grep mtu | grep 9000
+ip a | grep mtu | grep 1500
+clear
+vi ifcfg-br-ext 
+cat ifcfg-lxcbr0 
+clear
+cat ifcfg-br-storage 
+clear
+grep MTU=9000 *
+vi ifcfg-enp0s3
+vi ifcfg-enp0s8
+vi ifcfg-enp0s9
+vi ifcfg-enp0s10
+grep MTU=9000 *
+clear
+ip a | grep mtu | grep 1500
+ip a | grep mtu | grep 9000
+clear
+htop
+watch lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+watch lxc-ls -f
+watch lxc-ls -f
+lxc-stop -n ussuri-node2_galera_container-278d3aaa
+lxc-destroy -n ussuri-node2_galera_container-278d3aaa
+osa-exec galera
+watch lxc-ls -f
+osa-exec galera
+cd /var/lib/lxc/
+clear
+ls
+for a in `ls ./*/rootfs/etc/bashrc`; do echo "set -o vi" >> $a; done
+lxc-ls -f
+htop
+osa-exec galera
+osa-exec nova
+clear
+ip netns list
+osa-exec neutron
+watch ip netns list
