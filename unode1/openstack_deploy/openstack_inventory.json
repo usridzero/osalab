@@ -1,0 +1,3112 @@
+{
+    "_meta": {
+        "hostvars": {
+            "ussuri-node1": {
+                "ansible_host": "192.168.0.11",
+                "component": "nova_compute",
+                "container_address": "192.168.0.11",
+                "container_name": "ussuri-node1",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.11",
+                        "bridge": "br-mgmt",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "bridge": "br-storage",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "tunnel_address": {
+                        "bridge": "br-vxlan",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "container_types": "ussuri-node1-host_containers",
+                "is_metal": true,
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "compute_hosts",
+                "properties": {
+                    "is_metal": true
+                }
+            },
+            "ussuri-node1_ceph-mon_container-c835064e": {
+                "ansible_host": "192.168.0.112",
+                "component": "ceph-mon",
+                "container_address": "192.168.0.112",
+                "container_name": "ussuri-node1_ceph-mon_container-c835064e",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.112",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "ceph-mon_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_ceph-rgw_container-dd86f56e": {
+                "ansible_host": "192.168.0.118",
+                "component": "ceph-rgw",
+                "container_address": "192.168.0.118",
+                "container_name": "ussuri-node1_ceph-rgw_container-dd86f56e",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.118",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "ceph-rgw_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_cinder_api_container-956b7a76": {
+                "ansible_host": "192.168.0.70",
+                "component": "cinder_api",
+                "container_address": "192.168.0.70",
+                "container_name": "ussuri-node1_cinder_api_container-956b7a76",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.70",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.122",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "storage-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_galera_container-c0eb4aca": {
+                "ansible_host": "192.168.0.161",
+                "component": "galera",
+                "container_address": "192.168.0.161",
+                "container_name": "ussuri-node1_galera_container-c0eb4aca",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.161",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_glance_container-87bf2e4e": {
+                "ansible_host": "192.168.0.88",
+                "component": "glance_api",
+                "container_address": "192.168.0.88",
+                "container_name": "ussuri-node1_glance_container-87bf2e4e",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.88",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.187",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "image_hosts",
+                "properties": {
+                    "container_fs_size": "12G"
+                }
+            },
+            "ussuri-node1_horizon_container-d60383bd": {
+                "ansible_host": "192.168.0.85",
+                "component": "horizon",
+                "container_address": "192.168.0.85",
+                "container_name": "ussuri-node1_horizon_container-d60383bd",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.85",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "dashboard_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_keystone_container-446ec394": {
+                "ansible_host": "192.168.0.243",
+                "component": "keystone",
+                "container_address": "192.168.0.243",
+                "container_name": "ussuri-node1_keystone_container-446ec394",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.243",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "identity_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_memcached_container-02f681f7": {
+                "ansible_host": "192.168.0.242",
+                "component": "memcached",
+                "container_address": "192.168.0.242",
+                "container_name": "ussuri-node1_memcached_container-02f681f7",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.242",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_neutron_server_container-791d70ba": {
+                "ansible_host": "192.168.0.66",
+                "component": "neutron_server",
+                "container_address": "192.168.0.66",
+                "container_name": "ussuri-node1_neutron_server_container-791d70ba",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.66",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "network_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_nova_api_container-5a0cd4da": {
+                "ansible_host": "192.168.0.189",
+                "component": "nova_api_metadata",
+                "container_address": "192.168.0.189",
+                "container_name": "ussuri-node1_nova_api_container-5a0cd4da",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.189",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "compute-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_placement_container-4737d29a": {
+                "ansible_host": "192.168.0.163",
+                "component": "placement_api",
+                "container_address": "192.168.0.163",
+                "container_name": "ussuri-node1_placement_container-4737d29a",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.163",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "placement-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_rabbit_mq_container-1f504c26": {
+                "ansible_host": "192.168.0.78",
+                "component": "rabbitmq",
+                "container_address": "192.168.0.78",
+                "container_name": "ussuri-node1_rabbit_mq_container-1f504c26",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.78",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_repo_container-ca9d995a": {
+                "ansible_host": "192.168.0.104",
+                "component": "pkg_repo",
+                "container_address": "192.168.0.104",
+                "container_name": "ussuri-node1_repo_container-ca9d995a",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.104",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_rsyslog_container-fc0e721b": {
+                "ansible_host": "192.168.0.202",
+                "component": "rsyslog",
+                "container_address": "192.168.0.202",
+                "container_name": "ussuri-node1_rsyslog_container-fc0e721b",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.202",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "log_hosts",
+                "properties": {}
+            },
+            "ussuri-node1_utility_container-3f301497": {
+                "ansible_host": "192.168.0.74",
+                "component": "utility",
+                "container_address": "192.168.0.74",
+                "container_name": "ussuri-node1_utility_container-3f301497",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.74",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node1",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2": {
+                "ansible_host": "192.168.0.12",
+                "component": "nova_compute",
+                "container_address": "192.168.0.12",
+                "container_name": "ussuri-node2",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.12",
+                        "bridge": "br-mgmt",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "bridge": "br-storage",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "tunnel_address": {
+                        "bridge": "br-vxlan",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "container_types": "ussuri-node2-host_containers",
+                "is_metal": true,
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "compute_hosts",
+                "properties": {
+                    "is_metal": true
+                }
+            },
+            "ussuri-node2_ceph-mon_container-cbb452c2": {
+                "ansible_host": "192.168.0.67",
+                "component": "ceph-mon",
+                "container_address": "192.168.0.67",
+                "container_name": "ussuri-node2_ceph-mon_container-cbb452c2",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.67",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "ceph-mon_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_ceph-rgw_container-4cd24123": {
+                "ansible_host": "192.168.0.213",
+                "component": "ceph-rgw",
+                "container_address": "192.168.0.213",
+                "container_name": "ussuri-node2_ceph-rgw_container-4cd24123",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.213",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "ceph-rgw_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_cinder_api_container-49eac418": {
+                "ansible_host": "192.168.0.110",
+                "component": "cinder_api",
+                "container_address": "192.168.0.110",
+                "container_name": "ussuri-node2_cinder_api_container-49eac418",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.110",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.105",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "storage-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_galera_container-278d3aaa": {
+                "ansible_host": "192.168.0.65",
+                "component": "galera",
+                "container_address": "192.168.0.65",
+                "container_name": "ussuri-node2_galera_container-278d3aaa",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.65",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_glance_container-2f39aa60": {
+                "ansible_host": "192.168.0.54",
+                "component": "glance_api",
+                "container_address": "192.168.0.54",
+                "container_name": "ussuri-node2_glance_container-2f39aa60",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.54",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.101",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "image_hosts",
+                "properties": {
+                    "container_fs_size": "12G"
+                }
+            },
+            "ussuri-node2_horizon_container-3915d5af": {
+                "ansible_host": "192.168.0.232",
+                "component": "horizon",
+                "container_address": "192.168.0.232",
+                "container_name": "ussuri-node2_horizon_container-3915d5af",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.232",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "dashboard_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_keystone_container-c776fc40": {
+                "ansible_host": "192.168.0.191",
+                "component": "keystone",
+                "container_address": "192.168.0.191",
+                "container_name": "ussuri-node2_keystone_container-c776fc40",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.191",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "identity_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_memcached_container-f3d867ad": {
+                "ansible_host": "192.168.0.203",
+                "component": "memcached",
+                "container_address": "192.168.0.203",
+                "container_name": "ussuri-node2_memcached_container-f3d867ad",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.203",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_neutron_server_container-6588e142": {
+                "ansible_host": "192.168.0.176",
+                "component": "neutron_server",
+                "container_address": "192.168.0.176",
+                "container_name": "ussuri-node2_neutron_server_container-6588e142",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.176",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "network_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_nova_api_container-7a655410": {
+                "ansible_host": "192.168.0.75",
+                "component": "nova_api_metadata",
+                "container_address": "192.168.0.75",
+                "container_name": "ussuri-node2_nova_api_container-7a655410",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.75",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "compute-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_placement_container-40f49e7c": {
+                "ansible_host": "192.168.0.95",
+                "component": "placement_api",
+                "container_address": "192.168.0.95",
+                "container_name": "ussuri-node2_placement_container-40f49e7c",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.95",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "placement-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_rabbit_mq_container-43722561": {
+                "ansible_host": "192.168.0.34",
+                "component": "rabbitmq",
+                "container_address": "192.168.0.34",
+                "container_name": "ussuri-node2_rabbit_mq_container-43722561",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.34",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_repo_container-5c788743": {
+                "ansible_host": "192.168.0.223",
+                "component": "pkg_repo",
+                "container_address": "192.168.0.223",
+                "container_name": "ussuri-node2_repo_container-5c788743",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.223",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_rsyslog_container-e4fa79bf": {
+                "ansible_host": "192.168.0.111",
+                "component": "rsyslog",
+                "container_address": "192.168.0.111",
+                "container_name": "ussuri-node2_rsyslog_container-e4fa79bf",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.111",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "log_hosts",
+                "properties": {}
+            },
+            "ussuri-node2_utility_container-807bd1b0": {
+                "ansible_host": "192.168.0.178",
+                "component": "utility",
+                "container_address": "192.168.0.178",
+                "container_name": "ussuri-node2_utility_container-807bd1b0",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.178",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node2",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3": {
+                "ansible_host": "192.168.0.13",
+                "component": "nova_compute",
+                "container_address": "192.168.0.13",
+                "container_name": "ussuri-node3",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.13",
+                        "bridge": "br-mgmt",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "bridge": "br-storage",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "tunnel_address": {
+                        "bridge": "br-vxlan",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "container_types": "ussuri-node3-host_containers",
+                "is_metal": true,
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "compute_hosts",
+                "properties": {
+                    "is_metal": true
+                }
+            },
+            "ussuri-node3_ceph-mon_container-589e4581": {
+                "ansible_host": "192.168.0.152",
+                "component": "ceph-mon",
+                "container_address": "192.168.0.152",
+                "container_name": "ussuri-node3_ceph-mon_container-589e4581",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.152",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "ceph-mon_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_ceph-rgw_container-c210e97f": {
+                "ansible_host": "192.168.0.107",
+                "component": "ceph-rgw",
+                "container_address": "192.168.0.107",
+                "container_name": "ussuri-node3_ceph-rgw_container-c210e97f",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.107",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "ceph-rgw_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_cinder_api_container-06e864c7": {
+                "ansible_host": "192.168.0.234",
+                "component": "cinder_api",
+                "container_address": "192.168.0.234",
+                "container_name": "ussuri-node3_cinder_api_container-06e864c7",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.234",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.229",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "storage-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_galera_container-aec210eb": {
+                "ansible_host": "192.168.0.206",
+                "component": "galera",
+                "container_address": "192.168.0.206",
+                "container_name": "ussuri-node3_galera_container-aec210eb",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.206",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_glance_container-e0a30481": {
+                "ansible_host": "192.168.0.250",
+                "component": "glance_api",
+                "container_address": "192.168.0.250",
+                "container_name": "ussuri-node3_glance_container-e0a30481",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.250",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    },
+                    "storage_address": {
+                        "address": "192.168.2.55",
+                        "bridge": "br-storage",
+                        "interface": "eth2",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "image_hosts",
+                "properties": {
+                    "container_fs_size": "12G"
+                }
+            },
+            "ussuri-node3_horizon_container-76c6e008": {
+                "ansible_host": "192.168.0.93",
+                "component": "horizon",
+                "container_address": "192.168.0.93",
+                "container_name": "ussuri-node3_horizon_container-76c6e008",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.93",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "dashboard_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_keystone_container-682d2999": {
+                "ansible_host": "192.168.0.92",
+                "component": "keystone",
+                "container_address": "192.168.0.92",
+                "container_name": "ussuri-node3_keystone_container-682d2999",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.92",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "identity_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_memcached_container-dfb7b9d1": {
+                "ansible_host": "192.168.0.228",
+                "component": "memcached",
+                "container_address": "192.168.0.228",
+                "container_name": "ussuri-node3_memcached_container-dfb7b9d1",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.228",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_neutron_server_container-8e004b71": {
+                "ansible_host": "192.168.0.174",
+                "component": "neutron_server",
+                "container_address": "192.168.0.174",
+                "container_name": "ussuri-node3_neutron_server_container-8e004b71",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.174",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "network_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_nova_api_container-59b6ac95": {
+                "ansible_host": "192.168.0.156",
+                "component": "nova_api_metadata",
+                "container_address": "192.168.0.156",
+                "container_name": "ussuri-node3_nova_api_container-59b6ac95",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.156",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "compute-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_placement_container-fd8ad8c3": {
+                "ansible_host": "192.168.0.87",
+                "component": "placement_api",
+                "container_address": "192.168.0.87",
+                "container_name": "ussuri-node3_placement_container-fd8ad8c3",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.87",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "placement-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_rabbit_mq_container-7552093b": {
+                "ansible_host": "192.168.0.149",
+                "component": "rabbitmq",
+                "container_address": "192.168.0.149",
+                "container_name": "ussuri-node3_rabbit_mq_container-7552093b",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.149",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_repo_container-97c4124f": {
+                "ansible_host": "192.168.0.39",
+                "component": "pkg_repo",
+                "container_address": "192.168.0.39",
+                "container_name": "ussuri-node3_repo_container-97c4124f",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.39",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "repo-infra_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_rsyslog_container-def2565b": {
+                "ansible_host": "192.168.0.102",
+                "component": "rsyslog",
+                "container_address": "192.168.0.102",
+                "container_name": "ussuri-node3_rsyslog_container-def2565b",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.102",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "log_hosts",
+                "properties": {}
+            },
+            "ussuri-node3_utility_container-e568322d": {
+                "ansible_host": "192.168.0.71",
+                "component": "utility",
+                "container_address": "192.168.0.71",
+                "container_name": "ussuri-node3_utility_container-e568322d",
+                "container_networks": {
+                    "container_address": {
+                        "address": "192.168.0.71",
+                        "bridge": "br-mgmt",
+                        "interface": "eth1",
+                        "mtu": "9000",
+                        "netmask": "255.255.255.0",
+                        "type": "veth"
+                    }
+                },
+                "container_tech": "lxc",
+                "physical_host": "ussuri-node3",
+                "physical_host_group": "shared-infra_hosts",
+                "properties": {}
+            }
+        }
+    },
+    "all": {
+        "vars": {
+            "cidr_networks": {
+                "container": "192.168.0.0/24",
+                "storage": "192.168.2.0/24",
+                "tunnel": "192.168.1.0/24"
+            },
+            "container_cidr": "192.168.0.0/24",
+            "external_lb_vip_address": "10.0.0.30",
+            "internal_lb_vip_address": "192.168.0.30",
+            "management_bridge": "br-mgmt",
+            "provider_networks": [
+                {
+                    "network": {
+                        "container_bridge": "br-mgmt",
+                        "container_interface": "eth1",
+                        "container_mtu": "9000",
+                        "container_type": "veth",
+                        "group_binds": [
+                            "all_containers",
+                            "hosts"
+                        ],
+                        "ip_from_q": "container",
+                        "is_container_address": true,
+                        "type": "raw"
+                    }
+                },
+                {
+                    "network": {
+                        "container_bridge": "br-vxlan",
+                        "container_interface": "eth10",
+                        "container_mtu": "9000",
+                        "container_type": "veth",
+                        "group_binds": [
+                            "neutron_linuxbridge_agent"
+                        ],
+                        "ip_from_q": "tunnel",
+                        "net_name": "vxlan",
+                        "range": "1:1000",
+                        "type": "vxlan"
+                    }
+                },
+                {
+                    "network": {
+                        "container_bridge": "br-ext",
+                        "container_interface": "eth11",
+                        "container_mtu": "1500",
+                        "container_type": "veth",
+                        "group_binds": [
+                            "neutron_linuxbridge_agente"
+                        ],
+                        "net_name": "ext1",
+                        "type": "flat"
+                    }
+                },
+                {
+                    "network": {
+                        "container_bridge": "br-storage",
+                        "container_interface": "eth2",
+                        "container_mtu": "9000",
+                        "container_type": "veth",
+                        "group_binds": [
+                            "glance_api",
+                            "cinder_api",
+                            "cinder_volume",
+                            "nova_compute",
+                            "ceph-osd"
+                        ],
+                        "ip_from_q": "storage",
+                        "type": "raw"
+                    }
+                }
+            ]
+        }
+    },
+    "all_containers": {
+        "children": [
+            "swift-proxy_containers",
+            "trove-infra_containers",
+            "reservation_containers",
+            "image_containers",
+            "storage-infra_containers",
+            "metering-alarm_containers",
+            "policy_containers",
+            "kvm-compute_containers",
+            "mistral-infra_containers",
+            "swift_containers",
+            "qemu-compute_containers",
+            "operator_containers",
+            "memcaching_containers",
+            "mq_containers",
+            "magnum-infra_containers",
+            "network_containers",
+            "os-infra_containers",
+            "compute-infra_containers",
+            "dnsaas_containers",
+            "database_containers",
+            "metrics_containers",
+            "unbound_containers",
+            "mano_containers",
+            "storage_containers",
+            "ceph-osd_containers",
+            "haproxy_containers",
+            "orchestration_containers",
+            "murano-infra_containers",
+            "manila-infra_containers",
+            "ceph-mon_containers",
+            "octavia-infra_containers",
+            "ironic-inspector_containers",
+            "sahara-infra_containers",
+            "masakari-monitor_containers",
+            "log_containers",
+            "identity_containers",
+            "event-infra_containers",
+            "repo-infra_containers",
+            "manila-data_containers",
+            "metering-infra_containers",
+            "masakari-infra_containers",
+            "placement-infra_containers",
+            "ironic-infra_containers",
+            "ironic-server_containers",
+            "compute_containers",
+            "key-manager_containers",
+            "shared-infra_containers",
+            "ceph-rgw_containers",
+            "etcd_containers",
+            "ironic-compute_containers",
+            "metering-compute_containers",
+            "oslomsg-rpc_containers",
+            "dashboard_containers"
+        ],
+        "hosts": []
+    },
+    "aodh_alarm_evaluator": {
+        "children": [],
+        "hosts": []
+    },
+    "aodh_alarm_notifier": {
+        "children": [],
+        "hosts": []
+    },
+    "aodh_all": {
+        "children": [
+            "aodh_api",
+            "aodh_alarm_notifier",
+            "aodh_alarm_evaluator",
+            "aodh_listener"
+        ],
+        "hosts": []
+    },
+    "aodh_api": {
+        "children": [],
+        "hosts": []
+    },
+    "aodh_container": {
+        "hosts": []
+    },
+    "aodh_listener": {
+        "children": [],
+        "hosts": []
+    },
+    "barbican_all": {
+        "children": [
+            "barbican_api"
+        ],
+        "hosts": []
+    },
+    "barbican_api": {
+        "children": [],
+        "hosts": []
+    },
+    "barbican_container": {
+        "hosts": []
+    },
+    "blazar_all": {
+        "children": [
+            "blazar_manager",
+            "blazar_api"
+        ],
+        "hosts": []
+    },
+    "blazar_api": {
+        "children": [],
+        "hosts": []
+    },
+    "blazar_container": {
+        "hosts": []
+    },
+    "blazar_manager": {
+        "children": [],
+        "hosts": []
+    },
+    "ceilometer_agent_central": {
+        "children": [],
+        "hosts": []
+    },
+    "ceilometer_agent_compute": {
+        "children": [],
+        "hosts": []
+    },
+    "ceilometer_agent_notification": {
+        "children": [],
+        "hosts": []
+    },
+    "ceilometer_all": {
+        "children": [
+            "ceilometer_agent_notification",
+            "ceilometer_agent_compute",
+            "ceilometer_agent_central"
+        ],
+        "hosts": []
+    },
+    "ceilometer_central_container": {
+        "hosts": []
+    },
+    "ceph-mds_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-mon": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_ceph-mon_container-c835064e",
+            "ussuri-node2_ceph-mon_container-cbb452c2",
+            "ussuri-node3_ceph-mon_container-589e4581"
+        ]
+    },
+    "ceph-mon_all": {
+        "hosts": [
+            "ussuri-node1_ceph-mon_container-c835064e",
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node2_ceph-mon_container-cbb452c2",
+            "ussuri-node3_ceph-mon_container-589e4581",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-mon_container": {
+        "hosts": [
+            "ussuri-node1_ceph-mon_container-c835064e",
+            "ussuri-node2_ceph-mon_container-cbb452c2",
+            "ussuri-node3_ceph-mon_container-589e4581"
+        ]
+    },
+    "ceph-mon_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "ceph-mon_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-nfs_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-osd": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-osd_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-osd_container": {
+        "hosts": []
+    },
+    "ceph-osd_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "ceph-osd_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-rgw": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_ceph-rgw_container-dd86f56e",
+            "ussuri-node2_ceph-rgw_container-4cd24123",
+            "ussuri-node3_ceph-rgw_container-c210e97f"
+        ]
+    },
+    "ceph-rgw_all": {
+        "hosts": [
+            "ussuri-node1_ceph-rgw_container-dd86f56e",
+            "ussuri-node1",
+            "ussuri-node2_ceph-rgw_container-4cd24123",
+            "ussuri-node2",
+            "ussuri-node3_ceph-rgw_container-c210e97f",
+            "ussuri-node3"
+        ]
+    },
+    "ceph-rgw_container": {
+        "hosts": [
+            "ussuri-node1_ceph-rgw_container-dd86f56e",
+            "ussuri-node2_ceph-rgw_container-4cd24123",
+            "ussuri-node3_ceph-rgw_container-c210e97f"
+        ]
+    },
+    "ceph-rgw_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "ceph-rgw_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ceph_all": {
+        "children": [
+            "ceph-mon",
+            "ceph-rgw",
+            "ceph-osd"
+        ],
+        "hosts": []
+    },
+    "cinder_all": {
+        "children": [
+            "cinder_api",
+            "cinder_backup",
+            "cinder_volume",
+            "cinder_scheduler"
+        ],
+        "hosts": []
+    },
+    "cinder_api": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_cinder_api_container-956b7a76",
+            "ussuri-node2_cinder_api_container-49eac418",
+            "ussuri-node3_cinder_api_container-06e864c7"
+        ]
+    },
+    "cinder_api_container": {
+        "hosts": [
+            "ussuri-node1_cinder_api_container-956b7a76",
+            "ussuri-node2_cinder_api_container-49eac418",
+            "ussuri-node3_cinder_api_container-06e864c7"
+        ]
+    },
+    "cinder_backup": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "cinder_scheduler": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_cinder_api_container-956b7a76",
+            "ussuri-node2_cinder_api_container-49eac418",
+            "ussuri-node3_cinder_api_container-06e864c7"
+        ]
+    },
+    "cinder_volume": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "cinder_volumes_container": {
+        "hosts": []
+    },
+    "compute-infra_all": {
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node1",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node2",
+            "ussuri-node3_nova_api_container-59b6ac95",
+            "ussuri-node3"
+        ]
+    },
+    "compute-infra_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "compute-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "compute_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "compute_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "compute_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "congress_all": {
+        "children": [
+            "congress_server"
+        ],
+        "hosts": []
+    },
+    "congress_container": {
+        "hosts": []
+    },
+    "congress_server": {
+        "children": [],
+        "hosts": []
+    },
+    "dashboard_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node1_horizon_container-d60383bd",
+            "ussuri-node2",
+            "ussuri-node2_horizon_container-3915d5af",
+            "ussuri-node3",
+            "ussuri-node3_horizon_container-76c6e008"
+        ]
+    },
+    "dashboard_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "dashboard_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "database_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "database_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_all": {
+        "children": [
+            "designate_mdns",
+            "designate_worker",
+            "designate_sink",
+            "designate_producer",
+            "designate_central",
+            "designate_api"
+        ],
+        "hosts": []
+    },
+    "designate_api": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_central": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_container": {
+        "hosts": []
+    },
+    "designate_mdns": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_producer": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_sink": {
+        "children": [],
+        "hosts": []
+    },
+    "designate_worker": {
+        "children": [],
+        "hosts": []
+    },
+    "dnsaas_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "dnsaas_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "etcd": {
+        "children": [],
+        "hosts": []
+    },
+    "etcd_all": {
+        "children": [
+            "etcd"
+        ],
+        "hosts": []
+    },
+    "etcd_container": {
+        "hosts": []
+    },
+    "etcd_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "etcd_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "event-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "event-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "galera": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_galera_container-c0eb4aca",
+            "ussuri-node2_galera_container-278d3aaa",
+            "ussuri-node3_galera_container-aec210eb"
+        ]
+    },
+    "galera_all": {
+        "children": [
+            "galera"
+        ],
+        "hosts": []
+    },
+    "galera_container": {
+        "hosts": [
+            "ussuri-node1_galera_container-c0eb4aca",
+            "ussuri-node2_galera_container-278d3aaa",
+            "ussuri-node3_galera_container-aec210eb"
+        ]
+    },
+    "glance_all": {
+        "children": [
+            "glance_registry",
+            "glance_api"
+        ],
+        "hosts": []
+    },
+    "glance_api": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_glance_container-87bf2e4e",
+            "ussuri-node2_glance_container-2f39aa60",
+            "ussuri-node3_glance_container-e0a30481"
+        ]
+    },
+    "glance_container": {
+        "hosts": [
+            "ussuri-node1_glance_container-87bf2e4e",
+            "ussuri-node2_glance_container-2f39aa60",
+            "ussuri-node3_glance_container-e0a30481"
+        ]
+    },
+    "glance_registry": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_glance_container-87bf2e4e",
+            "ussuri-node2_glance_container-2f39aa60",
+            "ussuri-node3_glance_container-e0a30481"
+        ]
+    },
+    "gnocchi_all": {
+        "children": [
+            "gnocchi_metricd",
+            "gnocchi_api"
+        ],
+        "hosts": []
+    },
+    "gnocchi_api": {
+        "children": [],
+        "hosts": []
+    },
+    "gnocchi_container": {
+        "hosts": []
+    },
+    "gnocchi_metricd": {
+        "children": [],
+        "hosts": []
+    },
+    "haproxy": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "haproxy_all": {
+        "children": [
+            "haproxy"
+        ],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "haproxy_container": {
+        "hosts": []
+    },
+    "haproxy_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "haproxy_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "heat_all": {
+        "children": [
+            "heat_api_cfn",
+            "heat_api",
+            "heat_engine"
+        ],
+        "hosts": []
+    },
+    "heat_api": {
+        "children": [],
+        "hosts": []
+    },
+    "heat_api_cfn": {
+        "children": [],
+        "hosts": []
+    },
+    "heat_api_container": {
+        "hosts": []
+    },
+    "heat_engine": {
+        "children": [],
+        "hosts": []
+    },
+    "horizon": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_horizon_container-d60383bd",
+            "ussuri-node2_horizon_container-3915d5af",
+            "ussuri-node3_horizon_container-76c6e008"
+        ]
+    },
+    "horizon_all": {
+        "children": [
+            "horizon"
+        ],
+        "hosts": []
+    },
+    "horizon_container": {
+        "hosts": [
+            "ussuri-node1_horizon_container-d60383bd",
+            "ussuri-node2_horizon_container-3915d5af",
+            "ussuri-node3_horizon_container-76c6e008"
+        ]
+    },
+    "hosts": {
+        "children": [
+            "oslomsg-rpc_hosts",
+            "ironic-compute_hosts",
+            "kvm-compute_hosts",
+            "compute_hosts",
+            "haproxy_hosts",
+            "masakari-monitor_hosts",
+            "repo-infra_hosts",
+            "magnum-infra_hosts",
+            "dashboard_hosts",
+            "mistral-infra_hosts",
+            "trove-infra_hosts",
+            "image_hosts",
+            "dnsaas_hosts",
+            "ceph-osd_hosts",
+            "swift-proxy_hosts",
+            "compute-infra_hosts",
+            "placement-infra_hosts",
+            "ceph-mon_hosts",
+            "manila-data_hosts",
+            "swift_hosts",
+            "unbound_hosts",
+            "policy_hosts",
+            "masakari-infra_hosts",
+            "manila-infra_hosts",
+            "event-infra_hosts",
+            "ironic-infra_hosts",
+            "metrics_hosts",
+            "storage-infra_hosts",
+            "operator_hosts",
+            "octavia-infra_hosts",
+            "memcaching_hosts",
+            "qemu-compute_hosts",
+            "ironic-server_hosts",
+            "reservation_hosts",
+            "key-manager_hosts",
+            "log_hosts",
+            "etcd_hosts",
+            "database_hosts",
+            "ceph-rgw_hosts",
+            "os-infra_hosts",
+            "metering-compute_hosts",
+            "shared-infra_hosts",
+            "murano-infra_hosts",
+            "storage_hosts",
+            "metering-infra_hosts",
+            "network_hosts",
+            "mq_hosts",
+            "metering-alarm_hosts",
+            "orchestration_hosts",
+            "identity_hosts",
+            "sahara-infra_hosts",
+            "mano_hosts",
+            "ironic-inspector_hosts"
+        ],
+        "hosts": []
+    },
+    "identity_all": {
+        "hosts": [
+            "ussuri-node1_keystone_container-446ec394",
+            "ussuri-node1",
+            "ussuri-node2_keystone_container-c776fc40",
+            "ussuri-node2",
+            "ussuri-node3",
+            "ussuri-node3_keystone_container-682d2999"
+        ]
+    },
+    "identity_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "identity_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "image_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node1_glance_container-87bf2e4e",
+            "ussuri-node2_glance_container-2f39aa60",
+            "ussuri-node2",
+            "ussuri-node3_glance_container-e0a30481",
+            "ussuri-node3"
+        ]
+    },
+    "image_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "image_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "infrastructure_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "ironic-compute_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-compute_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-inspector_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-inspector_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-server_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic-server_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_all": {
+        "children": [
+            "ironic_inspector",
+            "ironic_api",
+            "ironic_server",
+            "ironic_conductor"
+        ],
+        "hosts": []
+    },
+    "ironic_api": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_api_container": {
+        "hosts": []
+    },
+    "ironic_compute": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_compute_container": {
+        "hosts": []
+    },
+    "ironic_conductor": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_inspector": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_inspector_container": {
+        "hosts": []
+    },
+    "ironic_server": {
+        "children": [],
+        "hosts": []
+    },
+    "ironic_server_container": {
+        "hosts": []
+    },
+    "ironic_servers": {
+        "children": [
+            "ironic_server"
+        ],
+        "hosts": []
+    },
+    "key-manager_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "key-manager_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "keystone": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_keystone_container-446ec394",
+            "ussuri-node2_keystone_container-c776fc40",
+            "ussuri-node3_keystone_container-682d2999"
+        ]
+    },
+    "keystone_all": {
+        "children": [
+            "keystone"
+        ],
+        "hosts": []
+    },
+    "keystone_container": {
+        "hosts": [
+            "ussuri-node1_keystone_container-446ec394",
+            "ussuri-node2_keystone_container-c776fc40",
+            "ussuri-node3_keystone_container-682d2999"
+        ]
+    },
+    "kvm-compute_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "kvm-compute_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "log_all": {
+        "hosts": [
+            "ussuri-node1_rsyslog_container-fc0e721b",
+            "ussuri-node1",
+            "ussuri-node2_rsyslog_container-e4fa79bf",
+            "ussuri-node2",
+            "ussuri-node3_rsyslog_container-def2565b",
+            "ussuri-node3"
+        ]
+    },
+    "log_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "log_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "lxc_hosts": {
+        "hosts": [
+            "ussuri-node3",
+            "ussuri-node1",
+            "ussuri-node2"
+        ]
+    },
+    "magnum": {
+        "children": [],
+        "hosts": []
+    },
+    "magnum-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "magnum-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "magnum_all": {
+        "children": [
+            "magnum"
+        ],
+        "hosts": []
+    },
+    "magnum_container": {
+        "hosts": []
+    },
+    "manila-data_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "manila-data_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "manila-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "manila-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "manila_all": {
+        "children": [
+            "manila_data",
+            "manila_scheduler",
+            "manila_share",
+            "manila_api"
+        ],
+        "hosts": []
+    },
+    "manila_api": {
+        "children": [],
+        "hosts": []
+    },
+    "manila_container": {
+        "hosts": []
+    },
+    "manila_data": {
+        "children": [],
+        "hosts": []
+    },
+    "manila_data_container": {
+        "hosts": []
+    },
+    "manila_scheduler": {
+        "children": [],
+        "hosts": []
+    },
+    "manila_share": {
+        "children": [],
+        "hosts": []
+    },
+    "mano_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "mano_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari-monitor_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari-monitor_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari_all": {
+        "children": [
+            "masakari_engine",
+            "masakari_monitor",
+            "masakari_api"
+        ],
+        "hosts": []
+    },
+    "masakari_api": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari_api_container": {
+        "hosts": []
+    },
+    "masakari_engine": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari_monitor": {
+        "children": [],
+        "hosts": []
+    },
+    "masakari_monitors_container": {
+        "hosts": []
+    },
+    "memcached": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_memcached_container-02f681f7",
+            "ussuri-node2_memcached_container-f3d867ad",
+            "ussuri-node3_memcached_container-dfb7b9d1"
+        ]
+    },
+    "memcached_all": {
+        "children": [
+            "memcached"
+        ],
+        "hosts": []
+    },
+    "memcached_container": {
+        "hosts": [
+            "ussuri-node1_memcached_container-02f681f7",
+            "ussuri-node2_memcached_container-f3d867ad",
+            "ussuri-node3_memcached_container-dfb7b9d1"
+        ]
+    },
+    "memcaching_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "memcaching_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-alarm_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-alarm_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-compute_container": {
+        "hosts": []
+    },
+    "metering-compute_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-compute_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "metering-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "metrics_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "metrics_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral_all": {
+        "children": [
+            "mistral_executor",
+            "mistral_notifier",
+            "mistral_engine",
+            "mistral_api"
+        ],
+        "hosts": []
+    },
+    "mistral_api": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral_container": {
+        "hosts": []
+    },
+    "mistral_engine": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral_executor": {
+        "children": [],
+        "hosts": []
+    },
+    "mistral_notifier": {
+        "children": [],
+        "hosts": []
+    },
+    "mq_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "mq_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "murano-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "murano-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "murano_all": {
+        "children": [
+            "murano_api",
+            "murano_engine"
+        ],
+        "hosts": []
+    },
+    "murano_api": {
+        "children": [],
+        "hosts": []
+    },
+    "murano_container": {
+        "hosts": []
+    },
+    "murano_engine": {
+        "children": [],
+        "hosts": []
+    },
+    "network_all": {
+        "hosts": [
+            "ussuri-node1_neutron_server_container-791d70ba",
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node2_neutron_server_container-6588e142",
+            "ussuri-node3_neutron_server_container-8e004b71",
+            "ussuri-node3"
+        ]
+    },
+    "network_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "network_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_agents_container": {
+        "hosts": []
+    },
+    "neutron_all": {
+        "children": [
+            "neutron_bgp_dragent",
+            "neutron_sriov_nic_agent",
+            "neutron_server",
+            "neutron_openvswitch_agent",
+            "neutron_metering_agent",
+            "neutron_metadata_agent",
+            "opendaylight",
+            "neutron_l3_agent",
+            "neutron_agent",
+            "neutron_dhcp_agent",
+            "neutron_linuxbridge_agent"
+        ],
+        "hosts": []
+    },
+    "neutron_bgp_dragent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_dhcp_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_l3_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_linuxbridge_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_metadata_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_metering_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_openvswitch_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "neutron_server": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_neutron_server_container-791d70ba",
+            "ussuri-node2_neutron_server_container-6588e142",
+            "ussuri-node3_neutron_server_container-8e004b71"
+        ]
+    },
+    "neutron_server_container": {
+        "hosts": [
+            "ussuri-node1_neutron_server_container-791d70ba",
+            "ussuri-node2_neutron_server_container-6588e142",
+            "ussuri-node3_neutron_server_container-8e004b71"
+        ]
+    },
+    "neutron_sriov_nic_agent": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "nova_all": {
+        "children": [
+            "nova_api_metadata",
+            "nova_conductor",
+            "nova_compute",
+            "nova_console",
+            "ironic_compute",
+            "nova_api_os_compute",
+            "nova_scheduler"
+        ],
+        "hosts": []
+    },
+    "nova_api_container": {
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nova_api_metadata": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nova_api_os_compute": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nova_compute": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "nova_compute_container": {
+        "hosts": []
+    },
+    "nova_conductor": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nova_console": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nova_scheduler": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node3_nova_api_container-59b6ac95"
+        ]
+    },
+    "nspawn_hosts": {
+        "hosts": []
+    },
+    "octavia-api": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia-health-manager": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia-housekeeping": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia-worker": {
+        "children": [],
+        "hosts": []
+    },
+    "octavia_all": {
+        "children": [
+            "octavia-worker",
+            "octavia-api",
+            "octavia-health-manager",
+            "octavia-housekeeping"
+        ],
+        "hosts": []
+    },
+    "octavia_server_container": {
+        "hosts": []
+    },
+    "opendaylight": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_neutron_server_container-791d70ba",
+            "ussuri-node2_neutron_server_container-6588e142",
+            "ussuri-node3_neutron_server_container-8e004b71"
+        ]
+    },
+    "operator_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "operator_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "orchestration_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "orchestration_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "os-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "os-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "oslomsg-rpc_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "oslomsg-rpc_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "panko_all": {
+        "children": [
+            "panko_api"
+        ],
+        "hosts": []
+    },
+    "panko_api": {
+        "children": [],
+        "hosts": []
+    },
+    "panko_container": {
+        "hosts": []
+    },
+    "pkg_repo": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_repo_container-ca9d995a",
+            "ussuri-node2_repo_container-5c788743",
+            "ussuri-node3_repo_container-97c4124f"
+        ]
+    },
+    "placement-infra_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node1_placement_container-4737d29a",
+            "ussuri-node2_placement_container-40f49e7c",
+            "ussuri-node2",
+            "ussuri-node3_placement_container-fd8ad8c3",
+            "ussuri-node3"
+        ]
+    },
+    "placement-infra_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "placement-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "placement_all": {
+        "children": [
+            "placement_api"
+        ],
+        "hosts": []
+    },
+    "placement_api": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_placement_container-4737d29a",
+            "ussuri-node2_placement_container-40f49e7c",
+            "ussuri-node3_placement_container-fd8ad8c3"
+        ]
+    },
+    "placement_container": {
+        "hosts": [
+            "ussuri-node1_placement_container-4737d29a",
+            "ussuri-node2_placement_container-40f49e7c",
+            "ussuri-node3_placement_container-fd8ad8c3"
+        ]
+    },
+    "policy_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "policy_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "qdrouterd": {
+        "children": [],
+        "hosts": []
+    },
+    "qdrouterd_all": {
+        "children": [
+            "qdrouterd"
+        ],
+        "hosts": []
+    },
+    "qdrouterd_container": {
+        "hosts": []
+    },
+    "qemu-compute_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "qemu-compute_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "rabbit_mq_container": {
+        "hosts": [
+            "ussuri-node1_rabbit_mq_container-1f504c26",
+            "ussuri-node2_rabbit_mq_container-43722561",
+            "ussuri-node3_rabbit_mq_container-7552093b"
+        ]
+    },
+    "rabbitmq": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_rabbit_mq_container-1f504c26",
+            "ussuri-node2_rabbit_mq_container-43722561",
+            "ussuri-node3_rabbit_mq_container-7552093b"
+        ]
+    },
+    "rabbitmq_all": {
+        "children": [
+            "rabbitmq"
+        ],
+        "hosts": []
+    },
+    "remote": {
+        "children": [
+            "swift-remote_hosts"
+        ],
+        "hosts": []
+    },
+    "remote_containers": {
+        "children": [
+            "swift-remote_containers"
+        ],
+        "hosts": []
+    },
+    "repo-infra_all": {
+        "hosts": [
+            "ussuri-node1_repo_container-ca9d995a",
+            "ussuri-node1",
+            "ussuri-node2_repo_container-5c788743",
+            "ussuri-node2",
+            "ussuri-node3",
+            "ussuri-node3_repo_container-97c4124f"
+        ]
+    },
+    "repo-infra_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "repo-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "repo_all": {
+        "children": [
+            "pkg_repo"
+        ],
+        "hosts": []
+    },
+    "repo_container": {
+        "hosts": [
+            "ussuri-node1_repo_container-ca9d995a",
+            "ussuri-node2_repo_container-5c788743",
+            "ussuri-node3_repo_container-97c4124f"
+        ]
+    },
+    "reservation_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "reservation_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "rsyslog": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_rsyslog_container-fc0e721b",
+            "ussuri-node2_rsyslog_container-e4fa79bf",
+            "ussuri-node3_rsyslog_container-def2565b"
+        ]
+    },
+    "rsyslog_all": {
+        "children": [
+            "rsyslog"
+        ],
+        "hosts": []
+    },
+    "rsyslog_container": {
+        "hosts": [
+            "ussuri-node1_rsyslog_container-fc0e721b",
+            "ussuri-node2_rsyslog_container-e4fa79bf",
+            "ussuri-node3_rsyslog_container-def2565b"
+        ]
+    },
+    "sahara-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "sahara-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "sahara_all": {
+        "children": [
+            "sahara_api",
+            "sahara_engine"
+        ],
+        "hosts": []
+    },
+    "sahara_api": {
+        "children": [],
+        "hosts": []
+    },
+    "sahara_container": {
+        "hosts": []
+    },
+    "sahara_engine": {
+        "children": [],
+        "hosts": []
+    },
+    "shared-infra_all": {
+        "hosts": [
+            "ussuri-node1_utility_container-3f301497",
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node2_utility_container-807bd1b0",
+            "ussuri-node3_utility_container-e568322d",
+            "ussuri-node3",
+            "ussuri-node1_memcached_container-02f681f7",
+            "ussuri-node2_memcached_container-f3d867ad",
+            "ussuri-node3_memcached_container-dfb7b9d1",
+            "ussuri-node1_galera_container-c0eb4aca",
+            "ussuri-node2_galera_container-278d3aaa",
+            "ussuri-node3_galera_container-aec210eb",
+            "ussuri-node1_rabbit_mq_container-1f504c26",
+            "ussuri-node2_rabbit_mq_container-43722561",
+            "ussuri-node3_rabbit_mq_container-7552093b"
+        ]
+    },
+    "shared-infra_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "shared-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "storage-infra_all": {
+        "hosts": [
+            "ussuri-node1_cinder_api_container-956b7a76",
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node2_cinder_api_container-49eac418",
+            "ussuri-node3_cinder_api_container-06e864c7",
+            "ussuri-node3"
+        ]
+    },
+    "storage-infra_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "storage-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "storage_all": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "storage_containers": {
+        "children": [
+            "ussuri-node1-host_containers",
+            "ussuri-node2-host_containers",
+            "ussuri-node3-host_containers"
+        ],
+        "hosts": []
+    },
+    "storage_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "swift-proxy_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "swift-proxy_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "swift-remote_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "swift-remote_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_acc": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_acc_container": {
+        "hosts": []
+    },
+    "swift_all": {
+        "children": [
+            "swift_acc",
+            "swift_cont",
+            "swift_obj",
+            "swift_proxy"
+        ],
+        "hosts": []
+    },
+    "swift_cont": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_cont_container": {
+        "hosts": []
+    },
+    "swift_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_obj": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_obj_container": {
+        "hosts": []
+    },
+    "swift_proxy": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_proxy_container": {
+        "hosts": []
+    },
+    "swift_remote": {
+        "children": [],
+        "hosts": []
+    },
+    "swift_remote_all": {
+        "children": [
+            "swift_remote"
+        ],
+        "hosts": []
+    },
+    "swift_remote_container": {
+        "hosts": []
+    },
+    "tacker_all": {
+        "children": [
+            "tacker_server"
+        ],
+        "hosts": []
+    },
+    "tacker_container": {
+        "hosts": []
+    },
+    "tacker_server": {
+        "children": [],
+        "hosts": []
+    },
+    "trove-infra_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "trove-infra_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "trove_all": {
+        "children": [
+            "trove_api",
+            "trove_conductor",
+            "trove_taskmanager"
+        ],
+        "hosts": []
+    },
+    "trove_api": {
+        "children": [],
+        "hosts": []
+    },
+    "trove_api_container": {
+        "hosts": []
+    },
+    "trove_conductor": {
+        "children": [],
+        "hosts": []
+    },
+    "trove_taskmanager": {
+        "children": [],
+        "hosts": []
+    },
+    "unbound": {
+        "children": [],
+        "hosts": []
+    },
+    "unbound_all": {
+        "children": [
+            "unbound"
+        ],
+        "hosts": []
+    },
+    "unbound_container": {
+        "hosts": []
+    },
+    "unbound_containers": {
+        "children": [],
+        "hosts": []
+    },
+    "unbound_hosts": {
+        "children": [],
+        "hosts": []
+    },
+    "ussuri-node1-host_containers": {
+        "hosts": [
+            "ussuri-node1_horizon_container-d60383bd",
+            "ussuri-node1_utility_container-3f301497",
+            "ussuri-node1_keystone_container-446ec394",
+            "ussuri-node1_neutron_server_container-791d70ba",
+            "ussuri-node1_placement_container-4737d29a",
+            "ussuri-node1_repo_container-ca9d995a",
+            "ussuri-node1_glance_container-87bf2e4e",
+            "ussuri-node1_memcached_container-02f681f7",
+            "ussuri-node1_cinder_api_container-956b7a76",
+            "ussuri-node1_galera_container-c0eb4aca",
+            "ussuri-node1_ceph-mon_container-c835064e",
+            "ussuri-node1_nova_api_container-5a0cd4da",
+            "ussuri-node1_ceph-rgw_container-dd86f56e",
+            "ussuri-node1_rsyslog_container-fc0e721b",
+            "ussuri-node1_rabbit_mq_container-1f504c26"
+        ]
+    },
+    "ussuri-node2-host_containers": {
+        "hosts": [
+            "ussuri-node2_horizon_container-3915d5af",
+            "ussuri-node2_utility_container-807bd1b0",
+            "ussuri-node2_keystone_container-c776fc40",
+            "ussuri-node2_neutron_server_container-6588e142",
+            "ussuri-node2_placement_container-40f49e7c",
+            "ussuri-node2_repo_container-5c788743",
+            "ussuri-node2_glance_container-2f39aa60",
+            "ussuri-node2_memcached_container-f3d867ad",
+            "ussuri-node2_cinder_api_container-49eac418",
+            "ussuri-node2_galera_container-278d3aaa",
+            "ussuri-node2_ceph-mon_container-cbb452c2",
+            "ussuri-node2_nova_api_container-7a655410",
+            "ussuri-node2_ceph-rgw_container-4cd24123",
+            "ussuri-node2_rsyslog_container-e4fa79bf",
+            "ussuri-node2_rabbit_mq_container-43722561"
+        ]
+    },
+    "ussuri-node3-host_containers": {
+        "hosts": [
+            "ussuri-node3_horizon_container-76c6e008",
+            "ussuri-node3_utility_container-e568322d",
+            "ussuri-node3_keystone_container-682d2999",
+            "ussuri-node3_neutron_server_container-8e004b71",
+            "ussuri-node3_placement_container-fd8ad8c3",
+            "ussuri-node3_repo_container-97c4124f",
+            "ussuri-node3_glance_container-e0a30481",
+            "ussuri-node3_memcached_container-dfb7b9d1",
+            "ussuri-node3_cinder_api_container-06e864c7",
+            "ussuri-node3_galera_container-aec210eb",
+            "ussuri-node3_ceph-mon_container-589e4581",
+            "ussuri-node3_nova_api_container-59b6ac95",
+            "ussuri-node3_ceph-rgw_container-c210e97f",
+            "ussuri-node3_rsyslog_container-def2565b",
+            "ussuri-node3_rabbit_mq_container-7552093b"
+        ]
+    },
+    "utility": {
+        "children": [],
+        "hosts": [
+            "ussuri-node1_utility_container-3f301497",
+            "ussuri-node2_utility_container-807bd1b0",
+            "ussuri-node3_utility_container-e568322d"
+        ]
+    },
+    "utility_all": {
+        "children": [
+            "utility"
+        ],
+        "hosts": []
+    },
+    "utility_container": {
+        "hosts": [
+            "ussuri-node1_utility_container-3f301497",
+            "ussuri-node2_utility_container-807bd1b0",
+            "ussuri-node3_utility_container-e568322d"
+        ]
+    },
+    "zun-compute_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    },
+    "zun-infra_hosts": {
+        "hosts": [
+            "ussuri-node1",
+            "ussuri-node2",
+            "ussuri-node3"
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ "${DEVICE}" == "lxcbr0" ];then
+  if [ "True" == "True" ];then
+    /usr/local/bin/lxc-system-manage dnsmasq-stop
+    /usr/local/bin/lxc-system-manage iptables-remove
+  fi
+fi

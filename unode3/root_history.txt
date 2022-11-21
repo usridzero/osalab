@@ -1,0 +1,414 @@
+exit
+clear
+vi /etc/sudoers
+yum -y install epel-release
+yum -y install bridge-utils
+yum -y install htop
+yum -y upgrade
+clear
+lsblk 
+cd 
+clear
+ls -al
+mkdir .ssh
+cd .ssh
+chmod 700 .
+ls -al
+clear
+ls -al
+chmod 600 ./*
+ls -al
+clear
+cd /etc/sysconfig/network-scripts/
+lr
+cat ifcfg-enp0s3 
+cat ifcfg-br-ext 
+systemctl restart network
+cd 
+cd .ssh
+clear
+ls
+rm known_hosts 
+ssh 10.0.0.11
+ssh 10.0.0.12
+ssh 192.168.0.11
+ssh 192.168.1.11
+ssh 192.168.2.11
+ssh 192.168.0.12
+ssh 192.168.1.12
+ssh 192.168.2.12
+clear
+ssh 10.0.0.13
+ssh 192.168.0.13
+ssh 192.168.1.13
+ssh 192.168.2.13
+clear
+w
+systemctl stop firewalld
+systemctl mask firewalld
+getenforce 
+setenforce 0
+getenforce 
+vi /etc/selinux/config 
+getenforce 
+clera
+clear
+cd /etc/openstack_deploy/
+ls
+cd ..
+rm -Rf ./openstack_deploy/
+yum install bridge-utils iputils lsof lvm2   chrony openssh-server sudo tcpdump python -y
+clear
+history | grep yum
+cd
+echo 'bonding' >> /etc/modules-load.d/openstack-ansible.conf
+echo '8021q' >> /etc/modules-load.d/openstack-ansible.conf
+systemctl enable chronyd.service
+systemctl start chronyd.service
+clear
+brctl show
+more /etc/hosts
+watch lxc-ls -f
+watch lxc-ls -f
+watch lxc-ls -f
+chmod +x /usr/local/bin/os*
+vi /etc/bashrc 
+exit
+osa-exec neutron
+htop
+lsblk 
+clear
+htop
+hatop
+clear
+osa-exec cinder
+hatop -s /var/run/haproxy.stat
+clear
+htop
+clear
+lxc-ls -f
+lxc-ls -f
+htop
+df -h
+htop
+w
+clear
+lxc-ls -f
+htop
+clear
+lsblk 
+ps -ef | grep neutron
+ps -ef | grep install
+clear
+htop
+osa-exec neutron
+ps -ef | grep install
+ping 192.168.0.30
+ping 192.168.0.30
+ps -ef | grep venv
+df -h
+clear
+htop
+ping google.com
+arp -a
+clear
+ps -ef | grep yum
+htop
+ps -ef | grep yum
+ps -ef | grep venv
+osa-exec neutron
+clear
+df -h
+lsblk 
+htop
+ps -ef | grep python
+ps -ef | grep python | grep install
+cd /var/log/
+clear
+ls
+lr
+date
+tail -f messages 
+cat messages | grep ERROR
+htop
+osa-exec neutron
+osa-exec neutron
+htop
+osa-exec galera
+osa-exec galera
+systemctl restart haproxy
+clear
+osa-exec galera
+htop
+osa-exec galera
+osa-exec galera
+htop
+osa-exec galera
+clear
+lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-ls -f
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+rm -Rf /openstack/ussuri-node3_galera_container-aec210eb/*
+clear
+watch lxc-ls -f
+watch lxc-ls -f
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+clear
+lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+lxc-ls -f
+rm -Rf /openstack/ussuri-node3_galera_container-aec210eb/*
+clear
+lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+rm -Rf /openstack/ussuri-node3_galera_container-aec210eb/*
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+yum clean all
+mkdir /backups/
+tar -zcvf /backups/rpmdb-$(date +"%d%m%Y").tar.gz  /var/lib/rpm
+rm -f /var/lib/rpm/__db*
+/usr/lib/rpm/rpmdb_verify /var/lib/rpm/Packages
+cd /var/lib/rpm/
+mv Packages Packages.back
+/usr/lib/rpm/rpmdb_dump Packages.back | /usr/lib/rpm/rpmdb_load Packages
+/usr/lib/rpm/rpmdb_verify Packages
+rpm -qa >/dev/null
+rpm -vv --rebuilddb
+rpm clean all
+clear
+yum clean all
+yum repolist
+cd
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+lxc-ls
+lxc-ls -f
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+watch ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+clear
+osa-exec galera
+osa-exec galera
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+rm -Rf /openstack/ussuri-node3_galera_container-aec210eb/*
+yum repolist
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+osa-exec galera
+clear
+ip a | grep 1500
+ip a | grep 9000
+history | grep set li
+history | grep mtu
+for a in `ip a | grep 1500 | awk -F: '{ print $2 }'`; do ip li set mtu 9000 dev $a; done
+for a in `ip a | grep 1500 | awk -F@ '{ print $1 }'`; do ip li set mtu 9000 dev $a; done
+ip a | grep 1500
+ip a | grep 9000
+clear
+osa-exec galera
+ls -l /openstack/ussuri-node3_galera_container-aec210eb/
+clear
+df -h
+exit
+htop
+clear
+ls
+set -o vi
+wget http://192.168.0.30:8181/os-releases/20.2.7.dev11/centos-7.9-x86_64
+osa-exec neutron
+ll
+rm centos-7.9-x86_64*
+clear
+ll
+htop
+lxc-ls -f
+osa-exec repo
+clear
+lxc-ls -f
+lxc-stop -n ussuri-node3_repo_container-97c4124f
+lxc-ls -f
+lxc-start -n ussuri-node3_repo_container-97c4124f
+clear
+htop
+htop
+osa-exec galer
+htop
+clear
+osa-exec galera
+ip a | grep mtu
+clear
+htop
+ll /openstack/venvs/neutron-20.2.7.dev11/bin/
+ll /openstack/venvs/neutron-20.2.7.dev11/bin/neutron*
+file /openstack/venvs/neutron-20.2.7.dev11/bin/neutron-keepalived-state-change 
+more /openstack/venvs/neutron-20.2.7.dev11/bin/neutron-keepalived-state-change 
+clear
+systemctl status keepalived
+htop
+/usr/local/bin/neutron-keepalived-state-change 
+ll /openstack/venvs/neutron-20.2.7.dev11/bin/neutron-keepalived-state-change 
+osa-exec neutron
+clear
+ip a | grep mtu
+htop
+clear
+cd /var/lib/lxc/ussuri-node3_neutron_server_container-8e004b71/rootfs/openstack/venvs/neutron-20.2.7.dev11/bin/
+watch ls -al
+pwd
+ls
+cd ..
+ls
+ll bin
+osa-exec neutron
+cd
+watch ls -al /var/lib/lxc/ussuri-node3_neutron_server_container-8e004b71/rootfs/openstack/venvs/neutron-20.2.7.dev11/
+ping google.com
+lxc-ls -f
+grep neutron /etc/hosts
+lxc-stop -n ussuri-node3_neutron_server_container-8e004b71
+wget http://192.168.0.30:8181
+ll
+cat index.html 
+wget http://192.168.0.30:8181/os-releases/
+ll
+cat index.html.1 
+clear
+wget http://192.168.0.30:8181/os-releases/20.2.7.dev11/centos-7.9-x86_64
+ll
+file centos-7.9-x86_64 
+more centos-7.9-x86_64 
+celar
+clear
+lxc-ls -f
+lxc-start -n ussuri-node3_neutron_server_container-8e004b71
+ll
+rm centos-7.9-x86_64 
+rm index.html*
+clear
+ll
+osa-exec neutron
+watch ls -al /var/lib/lxc/ussuri-node3_neutron_server_container-8e004b71/rootfs/openstack/venvs/neutron-20.2.7.dev11/
+clear
+osa-exec galera
+clear
+htop
+htop
+clear
+osa-exec galera
+osa-exec galera
+htop
+osa-exec galera
+ha
+ha
+clear
+ip r
+osa-exec galera
+htop
+htop
+clear
+lxc-ls -f
+osa-exec keystone
+clear
+for a in `ip a | grep lxcbr0 | awk -F@ '{ print $1 }'`; do ip li set mtu 1500 dev $a; done
+ip li set mtu 1500 br-ext
+clear
+ip a | grep mtu | grep 9000
+ip a | grep mtu | grep 1500
+ip li set mtu 9000 br-storage
+ip li set mtu 9000 br-storage
+clear
+history
+ip a | grep mtu | grep 1500
+ip li set mtu 9000 enp0s8
+ip li set mtu 9000 enp0s9
+ip li set mtu 9000 enp0s10
+ip a | grep mtu | grep 1500
+history
+ssh 10.0.0.11
+clear
+systemctl damon-reload
+systemctl daemon-reload
+systemctl is-enabled keepalived
+clear
+htop
+htop
+osa-exec cinder
+lsblk 
+htop
+htop
+htop
+celar
+cd /var/lib/lxc/
+ls
+for a in `ls ./*/rootfs/etc/bashrc`; do echo "set -o vi" >> $a; done
+htop
+ss | grep 4567
+clear
+cd
+osa-exec galera
+lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-ls -f
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+htop
+watch lxc-ls -f
+clear
+cd /etc/sysconfig/network-scripts/
+lr
+vi ifcfg-br-storage 
+clear
+vi ifcfg-br-storage 
+vi ifcfg-br-mgmt 
+vi ifcfg-br-vxlan 
+vi ifcfg-enp0s3
+vi ifcfg-enp0s8
+vi ifcfg-enp0s9
+vi ifcfg-enp0s10
+clear
+grep MTU=9000 *
+htop
+watch lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+watch lxc-ls -f
+watch lxc-ls -f
+clear
+ip a | grep mtu | ip a | grep mtu 
+clear
+ping 192.168.0.161
+ping 192.168.0.206
+watch lxc-ls -f
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+lxc-destroy -n ussuri-node3_galera_container-aec210eb
+osa-exec galera
+watch lxc-ls -f
+clear
+osa-exec galera
+cd /var/lib/lxc/
+for a in `ls ./*/rootfs/etc/bashrc`; do echo "set -o vi" >> $a; done
+clear
+lxc-ls -f
+watch lxc-ls -f
+watch lxc-ls -f
+htop
+lxc-stop -n ussuri-node3_galera_container-aec210eb
+clear
+lxc-ls -f
+reboot
+htop
+osa-exec galera
+ip a | grep mtu | grep 9000
+ip a | grep mtu | grep 1500
+clear
+osa-exec galera
+clear
+ip netns list
+osa-exec neutron
+watch ip netns list

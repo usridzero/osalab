@@ -1,0 +1,176 @@
+{
+    "ansible_apparmor": {
+        "status": "disabled"
+    }, 
+    "ansible_architecture": "x86_64", 
+    "ansible_cmdline": {
+        "BOOT_IMAGE": "/vmlinuz-3.10.0-1160.76.1.el7.x86_64", 
+        "LANG": "en_US.UTF-8", 
+        "crashkernel": "auto", 
+        "quiet": true, 
+        "rd.lvm.lv": "centos/swap", 
+        "rhgb": true, 
+        "ro": true, 
+        "root": "/dev/mapper/centos-root"
+    }, 
+    "ansible_date_time": {
+        "date": "2022-11-20", 
+        "day": "20", 
+        "epoch": "1668984623", 
+        "hour": "17", 
+        "iso8601": "2022-11-20T22:50:23Z", 
+        "iso8601_basic": "20221120T175023444479", 
+        "iso8601_basic_short": "20221120T175023", 
+        "iso8601_micro": "2022-11-20T22:50:23.444538Z", 
+        "minute": "50", 
+        "month": "11", 
+        "second": "23", 
+        "time": "17:50:23", 
+        "tz": "EST", 
+        "tz_offset": "-0500", 
+        "weekday": "Sunday", 
+        "weekday_number": "0", 
+        "weeknumber": "46", 
+        "year": "2022"
+    }, 
+    "ansible_distribution": "CentOS", 
+    "ansible_distribution_file_parsed": true, 
+    "ansible_distribution_file_path": "/etc/redhat-release", 
+    "ansible_distribution_file_variety": "RedHat", 
+    "ansible_distribution_major_version": "7", 
+    "ansible_distribution_release": "Core", 
+    "ansible_distribution_version": "7.9", 
+    "ansible_dns": {
+        "nameservers": [
+            "10.0.3.1"
+        ]
+    }, 
+    "ansible_domain": "openstack.local", 
+    "ansible_effective_group_id": 0, 
+    "ansible_effective_user_id": 0, 
+    "ansible_env": {
+        "HISTCONTROL": "ignoredups", 
+        "HISTSIZE": "1000", 
+        "HOME": "/root", 
+        "HOSTNAME": "ussuri-node3-repo-container-97c4124f", 
+        "LANG": "en_US.UTF-8", 
+        "LESSOPEN": "||/usr/bin/lesspipe.sh %s", 
+        "LOGNAME": "root", 
+        "LS_COLORS": "", 
+        "MAIL": "/var/spool/mail/root", 
+        "PATH": "/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin", 
+        "PWD": "/root", 
+        "SHELL": "/bin/bash", 
+        "SHLVL": "2", 
+        "USER": "root", 
+        "XDG_RUNTIME_DIR": "/run/user/0", 
+        "XDG_SESSION_ID": "15109", 
+        "_": "/usr/bin/python"
+    }, 
+    "ansible_fips": false, 
+    "ansible_fqdn": "ussuri-node3-repo-container-97c4124f.openstack.local", 
+    "ansible_hostname": "ussuri-node3-repo-container-97c4124f", 
+    "ansible_kernel": "3.10.0-1160.76.1.el7.x86_64", 
+    "ansible_local": {
+        "openstack_ansible": {
+            "lxc": {
+                "variant": "default"
+            }
+        }
+    }, 
+    "ansible_lsb": {}, 
+    "ansible_machine": "x86_64", 
+    "ansible_machine_id": "ace4e419fd144480a7b2ac24902b9d24", 
+    "ansible_nodename": "ussuri-node3-repo-container-97c4124f", 
+    "ansible_os_family": "RedHat", 
+    "ansible_pkg_mgr": "yum", 
+    "ansible_proc_cmdline": {
+        "BOOT_IMAGE": "/vmlinuz-3.10.0-1160.76.1.el7.x86_64", 
+        "LANG": "en_US.UTF-8", 
+        "crashkernel": "auto", 
+        "quiet": true, 
+        "rd.lvm.lv": [
+            "centos/root", 
+            "centos/swap"
+        ], 
+        "rhgb": true, 
+        "ro": true, 
+        "root": "/dev/mapper/centos-root"
+    }, 
+    "ansible_python": {
+        "executable": "/usr/bin/python", 
+        "has_sslcontext": true, 
+        "type": "CPython", 
+        "version": {
+            "major": 2, 
+            "micro": 5, 
+            "minor": 7, 
+            "releaselevel": "final", 
+            "serial": 0
+        }, 
+        "version_info": [
+            2, 
+            7, 
+            5, 
+            "final", 
+            0
+        ]
+    }, 
+    "ansible_python_version": "2.7.5", 
+    "ansible_real_group_id": 0, 
+    "ansible_real_user_id": 0, 
+    "ansible_selinux": {
+        "status": "Missing selinux Python library"
+    }, 
+    "ansible_selinux_python_present": false, 
+    "ansible_service_mgr": "systemd", 
+    "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPx49ZW065wQ338Ggs5F57LAzPSUPoVsVuVnfIT/SCAVvngInSuK4jw1qNF4ynyEmfMIXkrWVg9Dll6C+p6lVc0=", 
+    "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIKPUJnrcyu1Ihm3aesCg6PR+ZwxVPErQTIVAdSKIKAmo", 
+    "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCeWnO6GZ8m3Pu8WEnOUkT4rsn+FT07zPppbQ7tKKy+0F6wCOsz22LAzkZP50dM1agQ2V7ggpXsLqyz3B//6bQ+8KWj4VLSfVwOUUkzGnO3e7OnQlhJQFemiO0njITe5k/NZjIyaRmAl0mvtIfu3k709WbpX4QHDnokQ75/NpzR0ij+r3DDwy03lqsXEwVdD1eYmwOVU71/4Wn33CAVPuCx9SGHyypK4vForuSRtFdc9XL/kVgUYQqhdhGl5/o8g6L3vT/TreyfH+U04tWMtw8ckR/djiZbsz125PyAZZGvBeLojdmz9j659utweOEAXbe9N/Yij1WgjJoWlLP1keT3", 
+    "ansible_system": "Linux", 
+    "ansible_system_capabilities": [
+        "cap_chown", 
+        "cap_dac_override", 
+        "cap_dac_read_search", 
+        "cap_fowner", 
+        "cap_fsetid", 
+        "cap_kill", 
+        "cap_setgid", 
+        "cap_setuid", 
+        "cap_setpcap", 
+        "cap_linux_immutable", 
+        "cap_net_bind_service", 
+        "cap_net_broadcast", 
+        "cap_net_admin", 
+        "cap_net_raw", 
+        "cap_ipc_lock", 
+        "cap_ipc_owner", 
+        "cap_sys_chroot", 
+        "cap_sys_ptrace", 
+        "cap_sys_admin", 
+        "cap_sys_boot", 
+        "cap_sys_resource", 
+        "cap_sys_tty_config", 
+        "cap_mknod", 
+        "cap_lease", 
+        "cap_audit_write", 
+        "cap_audit_control", 
+        "cap_setfcap", 
+        "cap_syslog", 
+        "35", 
+        "36+ep"
+    ], 
+    "ansible_system_capabilities_enforced": "True", 
+    "ansible_user_dir": "/root", 
+    "ansible_user_gecos": "root", 
+    "ansible_user_gid": 0, 
+    "ansible_user_id": "root", 
+    "ansible_user_shell": "/bin/bash", 
+    "ansible_user_uid": 0, 
+    "ansible_userspace_architecture": "x86_64", 
+    "ansible_userspace_bits": "64", 
+    "gather_subset": [
+        "!all:hardware"
+    ], 
+    "module_setup": true
+}

@@ -1,0 +1,7 @@
+DEVICE=enp0s8
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+BRIDGE=br-mgmt
+MTU=9000
